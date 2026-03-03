@@ -107,16 +107,16 @@ export const navItemsKOR = [
 ];
 
 export const dummyNews = [
-    { id: 1, title: "A1 Special Steel announces new high-strength alloy", date: "2026-02-15", category: "Product" },
-    { id: 2, title: "Expansion of our Open Die Forging facility completed", date: "2026-01-20", category: "Corporate" },
-    { id: 3, title: "Achieved new ISO certification for nuclear materials", date: "2025-11-05", category: "Certification" },
-    { id: 4, title: "Q3 2025 Financial Results & Sustainability Report", date: "2025-10-12", category: "Financial" },
-    { id: 5, title: "Participation in the Global Industrial Materials Expo 2025", date: "2025-09-08", category: "Event" },
+    { id: 1, title: "에이원특수강 나호준 상무 \"국산 특수강 봉강 대표 유통사로 성장할 것\"", date: "2025-10-15", category: "인터뷰", href: "https://www.steeldaily.co.kr/news/articleView.html?idxno=195473" },
+    { id: 2, title: "방산·중장비 산업 국산 특수강 수요 증가세 지속", date: "2025-09-01", category: "시장동향" },
+    { id: 3, title: "세아베스틸 공식 대리점 에이원특수강, 토털 솔루션 기업으로 도약", date: "2025-07-20", category: "기업" },
+    { id: 4, title: "가공+유통+관리 결합한 특수강 봉강 원스톱 서비스 본격화", date: "2025-06-10", category: "서비스" },
+    { id: 5, title: "에이원특수강, 제3국 수출 시장 진출 박차", date: "2025-05-08", category: "해외진출" },
 ];
 
 export const companyStats = [
-    { label: "Global Presence", value: "30+", suffix: " Countries" },
-    { label: "Annual Production", value: "2.5M", suffix: " Tons" },
-    { label: "R&D Investment", value: "5%", suffix: " of Revenue" },
-    { label: "Years of Heritage", value: "50+", suffix: " Years" },
+    { label: "설립연도", value: "2008", suffix: "년" },
+    { label: "월 판매량", value: "800~1,000", suffix: "톤" },
+    { label: "월 재고 보유량", value: "1,500~2,000", suffix: "톤" },
+    { label: "임직원", value: "11", suffix: "명" },
 ];

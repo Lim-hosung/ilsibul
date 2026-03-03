@@ -7,8 +7,8 @@ export default function ContactPage() {
     return (
         <>
             <Hero
-                title="Contact Us"
-                subtitle="Our global team is ready to assist you."
+                title="문의하기"
+                subtitle="특수강 봉강 구매, 절단 가공, 열처리 등 모든 문의를 환영합니다."
                 imageSrc="https://images.unsplash.com/photo-1554528148-93663a8a07c9?w=1600&auto=format&fit=crop"
             />
 
@@ -19,10 +19,10 @@ export default function ContactPage() {
 
                         {/* Contact Information */}
                         <div>
-                            <h2 className="text-3xl font-black text-gray-900 mb-8">Get In Touch</h2>
+                            <h2 className="text-3xl font-black text-gray-900 mb-8">에이원특수강에 문의하세요</h2>
                             <p className="text-gray-600 mb-10 text-lg leading-relaxed">
-                                Whether you need technical specifications, a custom forging quote, or investor relations information,
-                                our dedicated representatives are available worldwide.
+                                특수강 봉강 구매 문의, 절단 가공 서비스, 열처리 협력 등 모든 사항을
+                                상담해 드립니다. 세아베스틸 공식 대리점 에이원특수강이 도움을 드리겠습니다.
                             </p>
 
                             <div className="space-y-8">
@@ -31,8 +31,8 @@ export default function ContactPage() {
                                         <MapPin className="w-6 h-6" />
                                     </div>
                                     <div className="ml-6">
-                                        <h3 className="text-lg font-bold text-gray-900 mb-1">Global Headquarters</h3>
-                                        <p className="text-gray-600">123 Industrial Parkway<br />Seoul, South Korea 04512</p>
+                                        <h3 className="text-lg font-bold text-gray-900 mb-1">주소</h3>
+                                        <p className="text-gray-600">경기도 시흥시 마유로 145<br />㈜에이원특수강</p>
                                     </div>
                                 </div>
 
@@ -41,8 +41,8 @@ export default function ContactPage() {
                                         <Phone className="w-6 h-6" />
                                     </div>
                                     <div className="ml-6">
-                                        <h3 className="text-lg font-bold text-gray-900 mb-1">Phone</h3>
-                                        <p className="text-gray-600">Sales: +82 2-1234-5678<br />Support: +82 2-1234-5679</p>
+                                        <h3 className="text-lg font-bold text-gray-900 mb-1">전화</h3>
+                                        <p className="text-gray-600">031-475-5549</p>
                                     </div>
                                 </div>
 
@@ -51,8 +51,8 @@ export default function ContactPage() {
                                         <Mail className="w-6 h-6" />
                                     </div>
                                     <div className="ml-6">
-                                        <h3 className="text-lg font-bold text-gray-900 mb-1">Email</h3>
-                                        <p className="text-gray-600">sales@a1specialsteel.example.com<br />info@a1specialsteel.example.com</p>
+                                        <h3 className="text-lg font-bold text-gray-900 mb-1">이메일</h3>
+                                        <p className="text-gray-600">문의 양식을 통해 연락주세요.</p>
                                     </div>
                                 </div>
                             </div>
@@ -60,37 +60,37 @@ export default function ContactPage() {
 
                         {/* Contact Form (Dummy) */}
                         <div className="bg-gray-50 p-8 md:p-12 rounded-2xl border border-gray-100">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-8">Send a Message</h3>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-8">문의 양식</h3>
                             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
-                                        <label className="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
-                                        <input type="text" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="John" />
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">회사명</label>
+                                        <input type="text" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="(주)OO기업" />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-semibold text-gray-700 mb-2">Last Name</label>
-                                        <input type="text" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Doe" />
+                                        <label className="block text-sm font-semibold text-gray-700 mb-2">담당자명</label>
+                                        <input type="text" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="홍길동" />
                                     </div>
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-                                    <input type="email" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="john@company.com" />
+                                    <label className="block text-sm font-semibold text-gray-700 mb-2">연락처</label>
+                                    <input type="tel" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="010-0000-0000" />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-semibold text-gray-700 mb-2">Department</label>
+                                    <label className="block text-sm font-semibold text-gray-700 mb-2">문의 유형</label>
                                     <select className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
-                                        <option>Sales Inquiry</option>
-                                        <option>Technical Support</option>
-                                        <option>Investor Relations</option>
-                                        <option>Other</option>
+                                        <option>제품 구매 문의</option>
+                                        <option>절단 가공 서비스</option>
+                                        <option>열처리 / 홀가공</option>
+                                        <option>기타</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
-                                    <textarea rows={4} className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="How can we help you?"></textarea>
+                                    <label className="block text-sm font-semibold text-gray-700 mb-2">문의 내용</label>
+                                    <textarea rows={4} className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="필요한 제품 규격, 수량, 용도 등을 자유롭게 작성해 주세요."></textarea>
                                 </div>
                                 <button type="button" className="w-full bg-blue-700 text-white font-bold py-4 rounded-md hover:bg-blue-800 transition-colors">
-                                    Submit Inquiry
+                                    문의 보내기
                                 </button>
                             </form>
                         </div>
