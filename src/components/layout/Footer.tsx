@@ -1,29 +1,69 @@
+'use client';
+
 import Link from 'next/link';
-import { navItems } from '@/data/dummy';
 import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
+import { useLang } from '@/lib/LanguageContext';
 
 export function Footer() {
+    const { lang } = useLang();
+
+    const t = {
+        desc: lang === 'ENG'
+            ? 'Official SeAH Besteel dealer specializing in special steel bar distribution, cutting processing, and total solutions for Korean industry.'
+            : '세아베스틸 공식 대리점. 특수강 봉강 유통·절단 가공·토털 솔루션 전문기업.',
+        address: lang === 'ENG' ? '145 Mayu-ro, Siheung-si, Gyeonggi-do' : '경기도 시흥시 마유로 145',
+        copy: lang === 'ENG'
+            ? `© ${new Date().getFullYear()} A1 Special Steel Co., Ltd. All rights reserved.`
+            : `© ${new Date().getFullYear()} ㈜에이원특수강. All rights reserved.`,
+        privacy: lang === 'ENG' ? 'Privacy Policy' : '개인정보처리방침',
+        terms: lang === 'ENG' ? 'Terms of Use' : '이용약관',
+        sitemap: 'Sitemap',
+        colProducts: lang === 'ENG' ? 'Products' : '제품',
+        colCompany: lang === 'ENG' ? 'Company' : '회사',
+        colResources: lang === 'ENG' ? 'Resources' : '자료',
+        prodItems: lang === 'ENG'
+            ? ['합금강 / 탄소강 봉강', '고합금강 봉강', '절단 가공 서비스', '열처리 협력망']
+            : ['합금강 / 탄소강 봉강', '고합금강 봉강', '절단 가공 서비스', '열처리 협력망'],
+        compItems: lang === 'ENG'
+            ? ['About Us', 'News & Media', 'History', 'Contact']
+            : ['회사 소개', '뉴스', '회사 연혁', '문의하기'],
+        compHrefs: ['/about/intro', '/about/news', '/about/history', '/contact'],
+        resItems: lang === 'ENG'
+            ? ['E-Catalog', 'Network', 'Contact Support']
+            : ['E-카탈로그', '네트워크', '고객 지원'],
+        resHrefs: ['/catalog', '/network', '/contact'],
+    };
+
+    const prodHrefs = [
+        '/products/special-steel',
+        '/products/special-steel',
+        '/contact',
+        '/contact',
+    ];
+    const prodItemsKOR = ['합금강 / 탄소강 봉강', '고합금강 봉강', '절단 가공 서비스', '열처리 협력망'];
+    const prodItemsENG = ['Alloy / Carbon Steel Bar', 'High-Alloy Steel Bar', 'Cutting & Processing', 'Heat Treatment Network'];
+    const prodItems = lang === 'ENG' ? prodItemsENG : prodItemsKOR;
+
     return (
         <footer className="bg-gray-950 text-gray-300 border-t border-gray-900">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
 
+                    {/* Brand block */}
                     <div className="lg:col-span-2 space-y-6">
                         <Link href="/" className="text-2xl font-bold tracking-tighter text-white flex items-center gap-2">
                             <div className="w-8 h-8 bg-blue-700 text-white rounded-sm flex items-center justify-center font-black">A1</div>
                             <span>Special Steel</span>
                         </Link>
-                        <p className="text-sm text-gray-400 max-w-sm leading-relaxed">
-                            Global leader in specialized steel manufacturing, providing premium materials and forging solutions for critical industries worldwide.
-                        </p>
+                        <p className="text-sm text-gray-400 max-w-sm leading-relaxed">{t.desc}</p>
                         <div className="space-y-3 pt-4">
                             <div className="flex items-start text-sm">
                                 <MapPin className="w-5 h-5 mr-3 text-blue-500 flex-shrink-0 mt-0.5" />
-                                <span>123 Industrial Parkway, Seoul, South Korea 04512</span>
+                                <span>{t.address}</span>
                             </div>
                             <div className="flex items-center text-sm">
                                 <Phone className="w-5 h-5 mr-3 text-blue-500 flex-shrink-0" />
-                                <span>+82 2-1234-5678</span>
+                                <span>031-475-5549</span>
                             </div>
                             <div className="flex items-center text-sm">
                                 <Mail className="w-5 h-5 mr-3 text-blue-500 flex-shrink-0" />
@@ -32,33 +72,39 @@ export function Footer() {
                         </div>
                     </div>
 
+                    {/* Products */}
                     <div>
-                        <h4 className="text-white font-bold mb-6 tracking-wide">Solutions</h4>
+                        <h4 className="text-white font-bold mb-6 tracking-wide">{t.colProducts}</h4>
                         <ul className="space-y-3 text-sm">
-                            <li><Link href="/products/special-steel" className="hover:text-white transition-colors">Special Steel</Link></li>
-                            <li><Link href="/products/open-die-forging" className="hover:text-white transition-colors">Open Die Forging</Link></li>
-                            <li><Link href="/products/nuclear" className="hover:text-white transition-colors">Nuclear Materials</Link></li>
-                            <li><Link href="/applications/energy" className="hover:text-white transition-colors">Energy Capabilities</Link></li>
+                            {prodItems.map((item, i) => (
+                                <li key={i}>
+                                    <Link href={prodHrefs[i]} className="hover:text-white transition-colors">{item}</Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
+                    {/* Company */}
                     <div>
-                        <h4 className="text-white font-bold mb-6 tracking-wide">Company</h4>
+                        <h4 className="text-white font-bold mb-6 tracking-wide">{t.colCompany}</h4>
                         <ul className="space-y-3 text-sm">
-                            <li><Link href="/about/intro" className="hover:text-white transition-colors">About Us</Link></li>
-                            <li><Link href="/about/news" className="hover:text-white transition-colors">News & Media</Link></li>
-                            <li><Link href="/technology/rnd" className="hover:text-white transition-colors">R&D Center</Link></li>
-                            <li><Link href="/about/sustainability" className="hover:text-white transition-colors">Sustainability</Link></li>
+                            {t.compItems.map((item, i) => (
+                                <li key={i}>
+                                    <Link href={t.compHrefs[i]} className="hover:text-white transition-colors">{item}</Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
+                    {/* Resources */}
                     <div>
-                        <h4 className="text-white font-bold mb-6 tracking-wide">Resources</h4>
+                        <h4 className="text-white font-bold mb-6 tracking-wide">{t.colResources}</h4>
                         <ul className="space-y-3 text-sm">
-                            <li><Link href="/catalog" className="hover:text-white transition-colors">Catalogs</Link></li>
-                            <li><Link href="/report" className="hover:text-white transition-colors">Test Reports</Link></li>
-                            <li><Link href="/network" className="hover:text-white transition-colors">Global Network</Link></li>
-                            <li><Link href="/contact" className="hover:text-white transition-colors">Contact Support</Link></li>
+                            {t.resItems.map((item, i) => (
+                                <li key={i}>
+                                    <Link href={t.resHrefs[i]} className="hover:text-white transition-colors">{item}</Link>
+                                </li>
+                            ))}
                         </ul>
                         <div className="mt-8 flex space-x-4">
                             <a href="#" className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors text-white">
@@ -76,11 +122,11 @@ export function Footer() {
 
             <div className="border-t border-gray-800 mt-4">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-                    <p>© {new Date().getFullYear()} A1 Special Steel Co., Ltd. All rights reserved.</p>
+                    <p>{t.copy}</p>
                     <div className="flex space-x-6 mt-4 md:mt-0">
-                        <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-                        <Link href="/terms" className="hover:text-white transition-colors">Terms of Use</Link>
-                        <Link href="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
+                        <Link href="/privacy" className="hover:text-white transition-colors">{t.privacy}</Link>
+                        <Link href="/terms" className="hover:text-white transition-colors">{t.terms}</Link>
+                        <Link href="/sitemap" className="hover:text-white transition-colors">{t.sitemap}</Link>
                     </div>
                 </div>
             </div>

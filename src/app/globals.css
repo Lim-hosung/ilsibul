@@ -82,3 +82,15 @@
   background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0);
   background-size: 32px 32px;
 }
+
+@keyframes kenBurns {
+  0%   { transform: scale(1)    translateX(0%)  translateY(0%); }
+  25%  { transform: scale(1.08) translateX(-1%) translateY(-1%); }
+  50%  { transform: scale(1.12) translateX(1%)  translateY(-0.5%); }
+  75%  { transform: scale(1.08) translateX(-0.5%) translateY(0.5%); }
+  100% { transform: scale(1)    translateX(0%)  translateY(0%); }
+}
+
+.ken-burns {
+  animation: kenBurns 12s ease-in-out infinite;
+}

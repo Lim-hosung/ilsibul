@@ -4,26 +4,27 @@ import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { LanguageProvider } from '@/lib/LanguageContext';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
   title: {
-    default: 'A1 Special Steel | Global Advanced Materials',
-    template: '%s | A1 Special Steel',
+    default: '에이원특수강 | 국산 특수강 봉강 전문 유통기업',
+    template: '%s | 에이원특수강',
   },
-  description: 'Global leader in specialized steel manufacturing, providing premium materials and forging solutions for critical industries worldwide.',
-  keywords: ['Special Steel', 'Open Die Forging', 'Nuclear Materials', 'Die Forging', 'Industrial Materials', 'A1 Steel'],
-  authors: [{ name: 'A1 Special Steel' }],
-  creator: 'A1 Special Steel',
-  publisher: 'A1 Special Steel',
+  description: '세아베스틸 공식 대리점 에이원특수강. 특수강 봉강 유통, 절단 가공, 열처리 협력망을 통한 토털 솔루션을 제공합니다.',
+  keywords: ['특수강', '봉강', '세아베스틸', '에이원특수강', '합금강', '절단가공', '방산'],
+  authors: [{ name: '에이원특수강' }],
+  creator: '에이원특수강',
+  publisher: '에이원특수강',
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'ko_KR',
     url: 'https://a1specialsteel.example.com',
-    title: 'A1 Special Steel | Global Advanced Materials',
-    description: 'Global leader in specialized steel manufacturing, providing premium materials and forging solutions.',
-    siteName: 'A1 Special Steel',
+    title: '에이원특수강 | 국산 특수강 봉강 전문 유통기업',
+    description: '세아베스틸 공식 대리점 에이원특수강. 특수강 봉강 전문 유통 기업.',
+    siteName: '에이원특수강',
   },
   robots: {
     index: true,
@@ -37,14 +38,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="ko" className={inter.variable}>
       <body className="min-h-screen bg-background font-sans antialiased flex flex-col pt-20">
-        <Header />
-        <main className="flex-grow flex flex-col">
-          <Breadcrumb />
-          {children}
-        </main>
-        <Footer />
+        <LanguageProvider>
+          <Header />
+          <main className="flex-grow flex flex-col">
+            <Breadcrumb />
+            {children}
+          </main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );
