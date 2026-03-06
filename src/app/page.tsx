@@ -13,10 +13,10 @@ import { useLang } from '@/lib/LanguageContext';
 const heroSlides = [
   {
     imageSrc: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2670&auto=format&fit=crop',
-    titleKOR: '국산 특수강 봉강 전문\n유통기업',
-    titleENG: 'Specialist in\nSpecial Steel Bar\nDistribution',
-    subtitleKOR: '세아베스틸 공식 대리점 에이원특수강 – 가공·유통·관리를 결합한 토탈 솔루션',
-    subtitleENG: 'A1 Special Steel – Official SeAH Besteel Dealer, delivering total solutions for Korean industry.',
+    titleKOR: '강철 같은 신뢰,\n특수강 전문 파트너',
+    titleENG: 'Steel-Grade Trust,\nYour Special Steel\nPartner',
+    subtitleKOR: '2008년 창립 이래 세아베스틸 공식 대리점 – 유통·절단·가공·솔루션 토털 서비스',
+    subtitleENG: 'Since 2008 — Official SeAH Besteel Dealer for total distribution, cutting & solution services.',
   },
   {
     imageSrc: 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?q=80&w=2670&auto=format&fit=crop',
@@ -29,8 +29,8 @@ const heroSlides = [
     imageSrc: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2670&auto=format&fit=crop',
     titleKOR: '자체 절단 설비로\n맞춤형 가공 서비스',
     titleENG: 'In-House Cutting\n& Processing\nServices',
-    subtitleKOR: '서큘레이터 3대, 밴드쏘 6대를 통한 신속하고 정밀한 절단 가공 서비스를 제공합니다.',
-    subtitleENG: '3 circulators and 6 band saws ready for fast, precise custom cutting for every client.',
+    subtitleKOR: '서큘레이터 11대, 밴드쏘 6대를 통한 신속하고 정밀한 절단 가공 서비스를 제공합니다.',
+    subtitleENG: '11 circulators and 6 band saws ready for fast, precise custom cutting for every client.',
   },
   {
     imageSrc: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=2670&auto=format&fit=crop',

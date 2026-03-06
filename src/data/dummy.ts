@@ -1,107 +1,107 @@
 export const navItems = [
     {
+        name: "BUSINESS",
+        href: "/business/distribution",
+        submenu: [
+            { name: "Distribution", href: "/business/distribution", description: "Official SeAH Besteel dealer – stable supply" },
+            { name: "Cutting", href: "/business/cutting", description: "Precision cutting service with 17 machines" },
+            { name: "Equipment", href: "/business/equipment", description: "In-house equipment and partner network" },
+            { name: "Solutions", href: "/business/solution", description: "Material selection and process consulting" },
+            { name: "Export", href: "/business/export", description: "Global supply chain across Asia & Europe" },
+        ]
+    },
+    {
         name: "PRODUCTS",
         href: "/products/special-steel",
         submenu: [
-            { name: "Special Steel", href: "/products/special-steel", description: "High-quality special steel for industrial use" },
-            { name: "Open Die Forging", href: "/products/open-die-forging", description: "Large scale open die forging products" },
-            { name: "Nuclear", href: "/products/nuclear", description: "Materials for nuclear power generation" },
-            { name: "Die Forging", href: "/products/die-forging", description: "Precision die forging solutions" },
+            { name: "Special Steel", href: "/products/special-steel", description: "S45C, SCM alloy & carbon steel bars" },
+            { name: "Secondary Steel", href: "/products/secondary", description: "PM, CD, precision-processed materials" },
+            { name: "Large Forging", href: "/products/large-forging", description: "Heavy forged products for energy & marine" },
+            { name: "Die Forging", href: "/products/die-forging", description: "Complex shaped precision forgings" },
         ]
     },
     {
-        name: "APPLICATIONS",
-        href: "/applications/energy",
+        name: "INDUSTRY",
+        href: "/industry/heavy-equipment",
         submenu: [
-            { name: "Energy", href: "/applications/energy" },
-            { name: "Machinery", href: "/applications/machinery" },
-            { name: "Automotive", href: "/applications/automotive" },
-            { name: "Bearing", href: "/applications/bearing" },
-            { name: "Shipbuilding", href: "/applications/shipbuilding" },
-            { name: "Nuclear", href: "/applications/nuclear" },
+            { name: "Heavy Equipment", href: "/industry/heavy-equipment" },
+            { name: "Automotive", href: "/industry/automotive" },
+            { name: "Defense", href: "/industry/defense" },
+            { name: "Shipbuilding", href: "/industry/shipbuilding" },
+            { name: "Energy", href: "/industry/energy" },
         ]
     },
     {
-        name: "TECHNOLOGY",
-        href: "/technology/rnd",
-        submenu: [
-            { name: "R&D", href: "/technology/rnd" },
-            { name: "Process", href: "/technology/process" },
-            { name: "Certification", href: "/technology/certification" },
-        ]
-    },
-    {
-        name: "CONTACT & INFO",
+        name: "SUPPORT",
         href: "/contact",
         submenu: [
-            { name: "Contact us", href: "/contact" },
+            { name: "Contact / RFQ", href: "/contact" },
             { name: "Network", href: "/network" },
             { name: "Catalog", href: "/catalog" },
-            { name: "Report", href: "/report" },
         ]
     },
     {
         name: "ABOUT",
         href: "/about/intro",
         submenu: [
-            { name: "Intro & Vision", href: "/about/intro" },
-            { name: "News", href: "/about/news" },
+            { name: "Company Overview", href: "/about/intro" },
             { name: "History", href: "/about/history" },
-            { name: "Sustainability", href: "/about/sustainability" },
+            { name: "CEO Message", href: "/about/ceo" },
+            { name: "Location", href: "/about/location" },
         ]
     }
 ];
 
 export const navItemsKOR = [
     {
-        name: "제품소개 (PRODUCTS)",
+        name: "사업소개",
+        href: "/business/distribution",
+        submenu: [
+            { name: "유통", href: "/business/distribution" },
+            { name: "절단", href: "/business/cutting" },
+            { name: "보유설비", href: "/business/equipment" },
+            { name: "제품개발 솔루션", href: "/business/solution" },
+            { name: "수출", href: "/business/export" },
+        ]
+    },
+    {
+        name: "제품소개",
         href: "/products/special-steel",
         submenu: [
             { name: "특수강", href: "/products/special-steel" },
-            { name: "자유단조", href: "/products/open-die-forging" },
-            { name: "원자력", href: "/products/nuclear" },
+            { name: "이차가공재", href: "/products/secondary" },
+            { name: "대형단조", href: "/products/large-forging" },
             { name: "형단조", href: "/products/die-forging" },
         ]
     },
     {
-        name: "적용산업 (APPLICATIONS)",
-        href: "/applications/energy",
+        name: "적용산업",
+        href: "/industry/heavy-equipment",
         submenu: [
-            { name: "에너지", href: "/applications/energy" },
-            { name: "기계부품", href: "/applications/machinery" },
-            { name: "자동차", href: "/applications/automotive" },
-            { name: "베어링", href: "/applications/bearing" },
-            { name: "조선", href: "/applications/shipbuilding" },
-            { name: "원자력", href: "/applications/nuclear" },
+            { name: "중장비", href: "/industry/heavy-equipment" },
+            { name: "자동차", href: "/industry/automotive" },
+            { name: "방산", href: "/industry/defense" },
+            { name: "조선", href: "/industry/shipbuilding" },
+            { name: "에너지", href: "/industry/energy" },
         ]
     },
     {
-        name: "기술/인증 (TECHNOLOGY)",
-        href: "/technology/rnd",
-        submenu: [
-            { name: "연구개발 (R&D)", href: "/technology/rnd" },
-            { name: "제조공정", href: "/technology/process" },
-            { name: "인증현황", href: "/technology/certification" },
-        ]
-    },
-    {
-        name: "고객지원 (CONTACT & INFO)",
+        name: "고객지원",
         href: "/contact",
         submenu: [
-            { name: "고객문의", href: "/contact" },
+            { name: "고객문의 / 견적의뢰", href: "/contact" },
             { name: "네트워크", href: "/network" },
             { name: "카탈로그", href: "/catalog" },
-            { name: "성적서 조회", href: "/report" },
         ]
     },
     {
-        name: "회사소개 (ABOUT)",
+        name: "회사소개",
         href: "/about/intro",
         submenu: [
-            { name: "소개 및 비전", href: "/about/intro" },
-            { name: "뉴스룸", href: "/about/news" },
+            { name: "회사개요", href: "/about/intro" },
             { name: "연혁", href: "/about/history" },
-            { name: "지속가능경영", href: "/about/sustainability" },
+            { name: "CEO 인사말", href: "/about/ceo" },
+            { name: "찾아오시는길", href: "/about/location" },
         ]
     }
 ];
@@ -115,8 +115,8 @@ export const dummyNews = [
 ];
 
 export const companyStats = [
-    { labelKOR: '설립연도', labelENG: 'Founded', value: '2008', suffixKOR: '년', suffixENG: '' },
-    { labelKOR: '월 판매량', labelENG: 'Monthly Sales', value: '800~1,000', suffixKOR: '톤', suffixENG: 't' },
-    { labelKOR: '월 재고 보유량', labelENG: 'Monthly Stock', value: '1,500~2,000', suffixKOR: '톤', suffixENG: 't' },
-    { labelKOR: '임직원', labelENG: 'Employees', value: '11', suffixKOR: '명', suffixENG: '' },
+    { id: 1, value: "2008", labelKOR: "설립연도", labelENG: "Founded", suffixKOR: "년", suffixENG: "" },
+    { id: 2, value: "800~1,000", labelKOR: "월 판매량", labelENG: "Monthly Sales", suffixKOR: "톤", suffixENG: "t" },
+    { id: 3, value: "1,500~2,000", labelKOR: "월 재고 보유량", labelENG: "Monthly Inventory", suffixKOR: "톤", suffixENG: "t" },
+    { id: 4, value: "11", labelKOR: "임직원", labelENG: "Employees", suffixKOR: "명", suffixENG: "" },
 ];

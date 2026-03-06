@@ -1,103 +1,61 @@
 'use client';
-
 import { Hero } from '@/components/ui/Hero';
-import { Mail, Phone, MapPin, Globe } from 'lucide-react';
+import { useLang } from '@/lib/LanguageContext';
 
-export default function ContactPage() {
+export default function NetworkPage() {
+    const { lang } = useLang();
     return (
         <>
             <Hero
-                title="Contact Us"
-                subtitle="Our global team is ready to assist you."
+                title={lang === 'ENG' ? 'Partnership-Powered\nSupply Chain' : '탄탄한 파트너십으로\n완성되는 공급망'}
+                subtitle={lang === 'ENG' ? 'Network' : '네트워크'}
                 imageSrc="https://images.unsplash.com/photo-1554528148-93663a8a07c9?w=1600&auto=format&fit=crop"
+                size="sm"
             />
-
-            <div className="py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-
-                        {/* Contact Information */}
-                        <div>
-                            <h2 className="text-3xl font-black text-gray-900 mb-8">Get In Touch</h2>
-                            <p className="text-gray-600 mb-10 text-lg leading-relaxed">
-                                Whether you need technical specifications, a custom forging quote, or investor relations information,
-                                our dedicated representatives are available worldwide.
-                            </p>
-
-                            <div className="space-y-8">
-                                <div className="flex items-start">
-                                    <div className="w-12 h-12 bg-blue-50 text-blue-700 rounded flex items-center justify-center shrink-0">
-                                        <MapPin className="w-6 h-6" />
-                                    </div>
-                                    <div className="ml-6">
-                                        <h3 className="text-lg font-bold text-gray-900 mb-1">Global Headquarters</h3>
-                                        <p className="text-gray-600">123 Industrial Parkway<br />Seoul, South Korea 04512</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start">
-                                    <div className="w-12 h-12 bg-blue-50 text-blue-700 rounded flex items-center justify-center shrink-0">
-                                        <Phone className="w-6 h-6" />
-                                    </div>
-                                    <div className="ml-6">
-                                        <h3 className="text-lg font-bold text-gray-900 mb-1">Phone</h3>
-                                        <p className="text-gray-600">Sales: +82 2-1234-5678<br />Support: +82 2-1234-5679</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start">
-                                    <div className="w-12 h-12 bg-blue-50 text-blue-700 rounded flex items-center justify-center shrink-0">
-                                        <Mail className="w-6 h-6" />
-                                    </div>
-                                    <div className="ml-6">
-                                        <h3 className="text-lg font-bold text-gray-900 mb-1">Email</h3>
-                                        <p className="text-gray-600">sales@a1specialsteel.example.com<br />info@a1specialsteel.example.com</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Contact Form (Dummy) */}
-                        <div className="bg-gray-50 p-8 md:p-12 rounded-2xl border border-gray-100">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-8">Send a Message</h3>
-                            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label className="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
-                                        <input type="text" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="John" />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-semibold text-gray-700 mb-2">Last Name</label>
-                                        <input type="text" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Doe" />
-                                    </div>
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-                                    <input type="email" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="john@company.com" />
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-semibold text-gray-700 mb-2">Department</label>
-                                    <select className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
-                                        <option>Sales Inquiry</option>
-                                        <option>Technical Support</option>
-                                        <option>Investor Relations</option>
-                                        <option>Other</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
-                                    <textarea rows={4} className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="How can we help you?"></textarea>
-                                </div>
-                                <button type="button" className="w-full bg-blue-700 text-white font-bold py-4 rounded-md hover:bg-blue-800 transition-colors">
-                                    Submit Inquiry
-                                </button>
-                            </form>
-                        </div>
-
+            <section className="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 className="text-3xl font-black text-gray-900 mb-6">{lang === 'ENG' ? 'Network' : '네트워크'}</h2>
+                <p className="text-gray-600 leading-relaxed text-lg mb-12">
+                    {lang === 'ENG'
+                        ? 'Based on close partnerships with SeAH Besteel and other major domestic steel manufacturers, A1 Special Steel systematically operates a cooperative network including heat treatment, hole machining, and forging. We continuously strengthen our global supply capabilities through expanding our overseas export network beyond Korea.'
+                        : '에이원특수강은 세아베스틸을 비롯한 국내 주요 철강 제조사와의 긴밀한 파트너십을 바탕으로, 열처리·홀가공·단조 등 협력 업체 네트워크를 체계적으로 운영합니다. 국내를 넘어 해외 수출 네트워크 확장을 통해 글로벌 공급 역량을 지속적으로 강화하고 있습니다.'}
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100">
+                        <h3 className="text-xl font-bold text-blue-900 mb-4">{lang === 'ENG' ? 'Key Partners' : '주요 파트너'}</h3>
+                        <ul className="space-y-3 text-gray-700 font-medium">
+                            <li className="flex items-center gap-3">
+                                <span className="w-2 h-2 rounded-full bg-blue-500 flex-shrink-0" />
+                                {lang === 'ENG' ? 'SeAH Besteel (Official Dealer)' : '세아베스틸 공식 대리점'}
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <span className="w-2 h-2 rounded-full bg-blue-500 flex-shrink-0" />
+                                {lang === 'ENG' ? 'FABIO (Processing Partner)' : '파비오 (가공 협력사)'}
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <span className="w-2 h-2 rounded-full bg-blue-500 flex-shrink-0" />
+                                {lang === 'ENG' ? 'Heat Treatment & Hole Machining Partners' : '열처리·홀가공 협력 업체'}
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                        <h3 className="text-xl font-bold text-gray-900 mb-4">{lang === 'ENG' ? 'Export Markets' : '수출 국가'}</h3>
+                        <ul className="space-y-3 text-gray-700 font-medium">
+                            <li className="flex items-center gap-3">
+                                <span className="w-2 h-2 rounded-full bg-gray-500 flex-shrink-0" />
+                                {lang === 'ENG' ? 'Thailand, Vietnam, India (Asia)' : '태국, 베트남, 인도 (아시아)'}
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <span className="w-2 h-2 rounded-full bg-gray-500 flex-shrink-0" />
+                                {lang === 'ENG' ? 'Russia and European markets' : '러시아 등 유럽 국가'}
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <span className="w-2 h-2 rounded-full bg-gray-500 flex-shrink-0" />
+                                {lang === 'ENG' ? 'Continuously expanding since 2010' : '2010년부터 지속 확장 중'}
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     );
 }
