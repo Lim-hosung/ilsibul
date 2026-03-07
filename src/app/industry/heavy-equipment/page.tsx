@@ -14,7 +14,7 @@ export default function HeavyEquipmentPage() {
     return (
         <>
             <Hero
-                title={lang === 'ENG' ? 'Proven Material Reliability\nin Harsh Conditions' : '혹독한 환경에서\n증명된 소재 신뢰성'}
+                title={lang === 'ENG' ? 'Proven Material Reliability in Harsh Conditions' : '혹독한 환경에서 증명된 소재 신뢰성'}
                 subtitle={lang === 'ENG' ? 'Heavy Equipment Industry' : '중장비 산업'}
                 imageSrc="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2670&auto=format&fit=crop"
                 size="sm"
@@ -24,7 +24,7 @@ export default function HeavyEquipmentPage() {
                 <p className="text-gray-600 leading-relaxed text-lg mb-6">
                     {lang === 'ENG'
                         ? 'Heavy equipment such as excavators, cranes, and forklifts requires high-strength, high-toughness materials that can withstand extreme loads and impacts. A1 Special Steel stably supplies special steel materials optimized for key heavy equipment components such as hydraulic cylinders, drive shafts, and pin types.'
-                        : '굴삭기, 크레인, 지게차 등 중장비 장비에는 극한의 하중과 충격에도 견디는 고강도·고인성 소재가 필수입니다. 에이원특수강은 유압실린더, 연결 축, 핀류 등 중장비 핵심 구동 부품에 최적화된 특수강 소재를 안정적으로 공급합니다.'}
+                        : '굴삭기, 크레인, 지게차 등 중장비 장비에는 극한의 하중과 충격에도 견디는 고강도·고인성 소재가 필수입니다. 에이원특수강은 유압실린더, 연결 축, 핀류 등 중장비 핵심 구동 부품에 최적화된 특수강 소재를 안정적으로 공급하며, 국내 주요 중장비 제조사의 신뢰받는 파트너입니다.'}
                 </p>
                 <div className="bg-blue-50 rounded-lg px-6 py-3 mb-10 inline-block">
                     <span className="font-bold text-blue-900">{lang === 'ENG' ? 'Key Parts: ' : '적용 부품: '}</span>

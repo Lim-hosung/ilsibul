@@ -7,7 +7,7 @@ export default function ExportPage() {
     return (
         <>
             <Hero
-                title={lang === 'ENG' ? 'Global Supply Chain\nBeyond Korea' : '국내외를 아우르는\n유통 서플라이 체인'}
+                title={lang === 'ENG' ? 'Global Supply Chain Beyond Korea' : '국내외를 아우르는 유통 서플라이 체인'}
                 subtitle={lang === 'ENG'
                     ? 'Customized supply chain reaching overseas customers'
                     : '해외의 고객까지 놓치지 않는 맞춤 공급망'}

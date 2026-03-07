@@ -7,9 +7,9 @@ export default function NetworkPage() {
     return (
         <>
             <Hero
-                title={lang === 'ENG' ? 'Partnership-Powered\nSupply Chain' : '탄탄한 파트너십으로\n완성되는 공급망'}
+                title={lang === 'ENG' ? 'Partnership-Powered Supply Chain' : '탄탄한 파트너십으로 완성되는 공급망'}
                 subtitle={lang === 'ENG' ? 'Network' : '네트워크'}
-                imageSrc="https://images.unsplash.com/photo-1554528148-93663a8a07c9?w=1600&auto=format&fit=crop"
+                imageSrc="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2670&auto=format&fit=crop"
                 size="sm"
             />
             <section className="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

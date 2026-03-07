@@ -7,7 +7,7 @@ export default function SecondaryPage() {
     return (
         <>
             <Hero
-                title={lang === 'ENG' ? 'Secondary Processed Steel\nfor Precision Applications' : 'PM·CD등 이차가공을 통한\n목적재'}
+                title={lang === 'ENG' ? 'Secondary Processed Steel for Precision Applications' : 'PM(PEELING), CD(DRAWING)등 이차가공을 통한 목적재'}
                 subtitle={lang === 'ENG'
                     ? 'Precision-processed materials ready for your production'
                     : '고객의 목적에 맞는 이차가공을 통한 준비된 소재 구비'}

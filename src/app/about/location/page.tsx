@@ -59,13 +59,18 @@ export default function LocationPage() {
                             </p>
                         </div>
                     </div>
-                    {/* Map placeholder */}
-                    <div className="bg-gray-100 rounded-2xl overflow-hidden min-h-[360px] flex items-center justify-center border border-gray-200">
-                        <div className="text-center text-gray-400">
-                            <MapPin className="w-12 h-12 mx-auto mb-3" />
-                            <p className="font-semibold">{lang === 'ENG' ? 'Map' : '지도'}</p>
-                            <p className="text-sm mt-1">{lang === 'ENG' ? '경기도 시흥시 마유로 145' : '경기도 시흥시 마유로 145'}</p>
-                        </div>
+                    {/* Google Maps */}
+                    <div className="rounded-2xl overflow-hidden min-h-[400px] border border-gray-200 shadow-sm">
+                        <iframe
+                            src="https://maps.google.com/maps?q=37.3326917,126.7228057&z=16&output=embed"
+                            width="100%"
+                            height="100%"
+                            style={{ minHeight: '400px', border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="에이원특수강 위치"
+                        />
                     </div>
                 </div>
             </section>

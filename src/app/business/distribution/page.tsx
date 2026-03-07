@@ -7,7 +7,7 @@ export default function DistributionPage() {
     return (
         <>
             <Hero
-                title={lang === 'ENG' ? 'Reliable Supply Chain for\nSpecial Steel' : '국산 특수강,\n신뢰 있는 공급망으로'}
+                title={lang === 'ENG' ? 'Reliable Supply Chain for Special Steel' : '국산 특수강, 신뢰 있는 공급망으로'}
                 subtitle={lang === 'ENG'
                     ? 'Official SeAH Besteel Dealer — Stable inventory and fast delivery'
                     : '세아베스틸 공식 대리점 — 안정적인 재고와 빠른 납기'}
@@ -26,7 +26,7 @@ export default function DistributionPage() {
                 <p className="text-gray-600 leading-relaxed text-lg mb-10">
                     {lang === 'ENG'
                         ? 'A1 Special Steel, as an official SeAH Besteel dealer, stably supplies various special steel bars including S45C structural carbon steel and SCM structural alloy steel bars. With an average inventory of 1,500–2,000 tons, we deliver fast and accurate supply to domestic manufacturing sites.'
-                        : '에이원특수강은 세아베스틸의 공식 대리점으로서 S45C 기계구조용 탄소강, SCM 구조용 합금강봉강을 포함한 다양한 특수강 봉강을 안정적으로 공급합니다.\n평균 1,500~2,000톤의 재고를 보유하며, 국내 제조업 현장에 신속하고 정확한 공급을 실현합니다.'}
+                        : '에이원특수강은 세아베스틸의 공식 대리점으로서 S45C 기계구조용 탄소강, SCM 구조용 합금강봉강을 포함한 다양한 특수강 봉강을 안정적으로 공급합니다. 평균 1,500~2,000톤의 재고를 보유하며, 국내 제조업 현장에 신속하고 정확한 공급을 실현합니다.'}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {[

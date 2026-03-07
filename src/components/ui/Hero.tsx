@@ -12,7 +12,7 @@ interface HeroProps {
 export function Hero({
     title,
     subtitle,
-    imageSrc = 'https://images.unsplash.com/photo-1565814329452-e1efa11c5e8d?q=80&w=2670&auto=format&fit=crop',
+    imageSrc = 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2670&auto=format&fit=crop',
     align = 'left',
     size = 'md',
     children
@@ -31,19 +31,24 @@ export function Hero({
 
     return (
         <div className={`relative flex w-full ${heightClasses[size]} overflow-hidden bg-gray-900`}>
-            {/* Background Image with Overlay */}
-            <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: `url(${imageSrc})` }}
-            >
-                <div className="absolute inset-0 bg-gradient-to-r from-gray-950/90 via-gray-900/70 to-gray-900/30" />
-                <div className="hero-pattern absolute inset-0 opacity-20 mix-blend-overlay" />
-            </div>
+            {/* Background Image */}
+            {imageSrc && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                    src={imageSrc}
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover"
+                    loading="eager"
+                />
+            )}
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-950/90 via-gray-900/70 to-gray-900/30" />
+            <div className="hero-pattern absolute inset-0 opacity-20 mix-blend-overlay" />
 
             {/* Content */}
-            <div className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex ${alignClasses[align]}`}>
-                <div className={`max-w-3xl ${align === 'center' ? 'mx-auto flex flex-col items-center' : ''}`}>
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-wide mb-6 leading-[1.1]">
+            <div className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 w-full flex ${alignClasses[align]}`}>
+                <div className={`max-w-5xl ${align === 'center' ? 'mx-auto flex flex-col items-center' : ''}`}>
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-wide mb-6 leading-[1.15]">
                         {title}
                     </h1>
                     {subtitle && (

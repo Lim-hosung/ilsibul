@@ -14,7 +14,7 @@ export default function ShipbuildingPage() {
     return (
         <>
             <Hero
-                title={lang === 'ENG' ? 'Marine Strength —\nCore Materials for Shipbuilding' : '바다 위의 강인함,\n조선 산업의 핵심 소재'}
+                title={lang === 'ENG' ? 'Marine Strength — Core Materials for Shipbuilding' : '바다 위의 강인함, 조선 산업의 핵심 소재'}
                 subtitle={lang === 'ENG' ? 'Shipbuilding Industry' : '조선 산업'}
                 imageSrc="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?q=80&w=2670&auto=format&fit=crop"
                 size="sm"
@@ -24,7 +24,7 @@ export default function ShipbuildingPage() {
                 <p className="text-gray-600 leading-relaxed text-lg mb-6">
                     {lang === 'ENG'
                         ? 'Ships require materials that simultaneously satisfy corrosion resistance in seawater, strength to withstand high loads, and precise machinability. A1 Special Steel supplies suitable materials for core shipbuilding components such as propulsion shafts, crankshafts, and forged parts.'
-                        : '선박은 해수 환경에서의 내식성, 고하중을 견디는 강도, 그리고 정밀한 가공성을 동시에 만족하는 소재를 필요로 합니다. 에이원특수강은 선박 추진축, 크랭크샤프트, 단조 부품 등 조선 핵심 구조물에 적합한 소재를 공급합니다.'}
+                        : '선박은 해수 환경에서의 내식성, 고하중을 견디는 강도, 그리고 정밀한 가공성을 동시에 만족하는 소재를 필요로 합니다. 에이원특수강은 선박 추진축, 크랭크샤프트, 단조 부품 등 조선 핵심 구조물에 적합한 소재를 공급하여 국내 조선 산업의 품질 경쟁력에 기여합니다.'}
                 </p>
                 <div className="bg-blue-50 rounded-lg px-6 py-3 mb-10 inline-block">
                     <span className="font-bold text-blue-900">{lang === 'ENG' ? 'Key Parts: ' : '적용 부품: '}</span>

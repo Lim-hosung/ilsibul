@@ -7,11 +7,11 @@ export default function EquipmentPage() {
     return (
         <>
             <Hero
-                title={lang === 'ENG' ? 'Systematic Equipment,\nConsistent Quality' : '체계적인 설비,\n일관된 품질의 기반'}
+                title={lang === 'ENG' ? 'Systematic Equipment, Consistent Quality' : '체계적인 설비, 일관된 품질의 기반'}
                 subtitle={lang === 'ENG'
                     ? 'From cutting to heat treatment network — complete operations'
                     : '가공부터 열처리 연계까지, 완결된 설비 운영'}
-                imageSrc="https://images.unsplash.com/photo-1565814329452-e1efa11c5e8d?q=80&w=2670&auto=format&fit=crop"
+                imageSrc="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2670&auto=format&fit=crop"
                 size="sm"
             />
             <section className="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,7 +32,7 @@ export default function EquipmentPage() {
                         lang === 'ENG' ? '6 Band Saws' : '✔ 밴드쏘 6대',
                         lang === 'ENG' ? 'Partner Network: Heat Treatment & Hole Machining' : '✔ 협력 네트워크: 열처리, 홀가공 등',
                     ].map((point, i) => (
-                        <div key={i} className="bg-gray-50 border border-gray-200 rounded-xl p-6 text-gray-900 font-bold text-center">{point}</div>
+                        <div key={i} className="bg-blue-50 border border-blue-100 rounded-xl p-6 text-blue-900 font-bold text-center">{point}</div>
                     ))}
                 </div>
             </section>

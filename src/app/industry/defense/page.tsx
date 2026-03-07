@@ -14,7 +14,7 @@ export default function DefensePage() {
     return (
         <>
             <Hero
-                title={lang === 'ENG' ? 'High-Reliability Materials\nfor National Security' : '국가 안보를\n뒷받침하는 고신뢰 소재'}
+                title={lang === 'ENG' ? 'High-Reliability Materials for National Security' : '국가 안보를 뒷받침하는 고신뢰 소재'}
                 subtitle={lang === 'ENG' ? 'Defense Industry' : '방산 산업'}
                 imageSrc="https://images.unsplash.com/photo-1565814329452-e1efa11c5e8d?q=80&w=2670&auto=format&fit=crop"
                 size="sm"
@@ -24,7 +24,7 @@ export default function DefensePage() {
                 <p className="text-gray-600 leading-relaxed text-lg mb-6">
                     {lang === 'ENG'
                         ? 'Materials in the defense sector require absolute reliability and performance even in extreme situations. A1 Special Steel supplies materials centered on high-alloy special steels that meet the strict specifications required for defense component manufacturing, supporting K-defense competitiveness.'
-                        : '방산 분야에서의 소재는 극한 상황에서도 절대적인 신뢰성과 성능을 요구합니다. 에이원특수강은 고합금 특수강을 중심으로 방산 핵심 부품 제조에 필요한 엄격한 사양을 충족하는 소재를 공급하며, K-방산 경쟁력을 지원합니다.'}
+                        : '방산 분야에서의 소재는 극한 상황에서도 절대적인 신뢰성과 성능을 요구합니다. 에이원특수강은 고합금 특수강을 중심으로 방산 핵심 부품 제조에 필요한 엄격한 사양을 충족하는 소재를 공급하며, 국산 특수강의 신뢰도 향상과 함께 K-방산 경쟁력을 지원합니다.'}
                 </p>
                 <div className="bg-blue-50 rounded-lg px-6 py-3 mb-10 inline-block">
                     <span className="font-bold text-blue-900">{lang === 'ENG' ? 'Key Parts: ' : '적용 부품: '}</span>

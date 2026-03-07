@@ -16,7 +16,7 @@ export default function HistoryPage() {
         <>
             <Hero
                 title={lang === 'ENG' ? 'Company History' : '회사 연혁'}
-                imageSrc="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1600&auto=format&fit=crop"
+                imageSrc="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2670&auto=format&fit=crop"
                 size="sm"
             />
             <section className="py-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,7 +26,7 @@ export default function HistoryPage() {
                     <div className="space-y-10">
                         {milestones.map((m, i) => (
                             <div key={i} className="flex gap-8 items-start relative">
-                                <div className="w-20 flex-shrink-0 text-right">
+                                <div className="w-20 flex-shrink-0 text-left">
                                     <span className="font-black text-blue-700 text-lg">{m.year}</span>
                                 </div>
                                 <div className="relative">

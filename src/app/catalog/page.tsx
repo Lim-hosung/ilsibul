@@ -1,92 +1,87 @@
 'use client';
 import { Hero } from '@/components/ui/Hero';
-import { useState } from 'react';
-import { Download, FileText, Search } from 'lucide-react';
+import { useLang } from '@/lib/LanguageContext';
+import { Download, FileText, Mail, Phone } from 'lucide-react';
 
 export default function CatalogPage() {
-    const [activeCategory, setActiveCategory] = useState('All');
+    const { lang } = useLang();
 
-    const catalogs = [
-        { id: 1, title: 'Special Steel Product Guide 2026', category: 'Special Steel', size: '4.2 MB' },
-        { id: 2, title: 'Open Die Forging Capabilities', category: 'Forging', size: '5.1 MB' },
-        { id: 3, title: 'Automotive Alloy Grades', category: 'Automotive', size: '3.8 MB' },
-        { id: 4, title: 'Nuclear Material Certifications', category: 'Nuclear', size: '2.5 MB' },
-        { id: 5, title: 'Die Forging Design Tolerances', category: 'Forging', size: '6.7 MB' },
-        { id: 6, title: 'Corporate Brochure 2026', category: 'Corporate', size: '12.4 MB' },
-    ];
-
-    const categories = ['All', 'Special Steel', 'Forging', 'Automotive', 'Nuclear', 'Corporate'];
-
-    const filteredCatalogs = activeCategory === 'All'
-        ? catalogs
-        : catalogs.filter(c => c.category === activeCategory);
+    const handleRequest = () => {
+        const subject = encodeURIComponent('[에이원특수강] 카탈로그 요청');
+        const body = encodeURIComponent('안녕하세요,\n\n에이원특수강 제품 카탈로그를 요청드립니다.\n\n이름/회사:\n연락처:\n이메일:');
+        window.location.href = `mailto:icecuve84@naver.com?subject=${subject}&body=${body}`;
+    };
 
     return (
         <>
             <Hero
-                title="Catalogs & Brochures"
-                subtitle="Download technical specifications and product guides."
-                imageSrc="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1600&auto=format&fit=crop"
+                title={lang === 'ENG' ? 'Check Products & Solutions at a Glance' : '제품과 솔루션을 한눈에 확인하세요'}
+                subtitle={lang === 'ENG'
+                    ? 'A1 Special Steel catalogues with grades, specs, and application details'
+                    : '에이원특수강의 제품 카탈로그를 통해 취급 강종, 규격, 적용 분야에 대한 상세 정보를 확인하실 수 있습니다.'}
+                imageSrc="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=2670&auto=format&fit=crop"
                 size="sm"
             />
 
-            <div className="py-20 bg-gray-50 min-h-[50vh]">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Description */}
+                <div className="mb-12 text-center">
+                    <p className="text-gray-600 leading-relaxed text-lg max-w-2xl mx-auto">
+                        {lang === 'ENG'
+                            ? 'Check detailed information on the grades we handle, specifications, and application areas through our product catalogues. If needed, please contact us and we will provide the latest materials.'
+                            : '에이원특수강의 제품 카탈로그를 통해 취급 강종, 규격, 적용 분야에 대한 상세 정보를 확인하실 수 있습니다. 필요하신 경우 담당자에게 요청하시면 최신 자료를 제공해 드리겠습니다.'}
+                    </p>
+                </div>
 
-                    <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
-                        <div className="flex overflow-x-auto gap-2 w-full md:w-auto pb-2 md:pb-0">
-                            {categories.map(cat => (
-                                <button
-                                    key={cat}
-                                    onClick={() => setActiveCategory(cat)}
-                                    className={`px-5 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${activeCategory === cat ? 'bg-blue-700 text-white' : 'bg-white text-gray-600 hover:bg-gray-200 border border-gray-200'}`}
-                                >
-                                    {cat}
-                                </button>
-                            ))}
+                {/* Download Request Card */}
+                <div className="bg-blue-50 border border-blue-200 rounded-2xl p-10 text-center mb-10">
+                    <div className="w-16 h-16 bg-blue-700 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <FileText className="w-8 h-8 text-white" />
+                    </div>
+                    <h2 className="text-2xl font-black text-gray-900 mb-3">
+                        {lang === 'ENG' ? 'A1 Special Steel Product Catalogue' : '에이원특수강 제품 카탈로그'}
+                    </h2>
+                    <p className="text-gray-600 mb-2 text-sm">
+                        {lang === 'ENG'
+                            ? 'SCM · S45C · SNCM · SNC · SCr — Full lineup of domestic special steel bars'
+                            : 'SCM · S45C · SNCM · SNC · SCr — 국산 특수강 봉강 전 강종 취급'}
+                    </p>
+                    <p className="text-gray-500 mb-8 text-sm">
+                        {lang === 'ENG'
+                            ? '※ The latest catalogue is provided upon request to our representative.'
+                            : '※ 최신 카탈로그는 담당자에게 요청하시면 제공됩니다.'}
+                    </p>
+                    <button
+                        onClick={handleRequest}
+                        className="inline-flex items-center gap-2 px-8 py-4 bg-blue-700 text-white font-bold rounded-xl hover:bg-blue-800 transition-colors text-lg shadow-md"
+                    >
+                        <Download className="w-5 h-5" />
+                        {lang === 'ENG' ? 'Download Catalogue' : '카탈로그 다운로드'}
+                    </button>
+                </div>
+
+                {/* Contact Info */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="flex items-center gap-4 p-5 bg-gray-50 rounded-xl border border-gray-200">
+                        <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                            <Phone className="w-5 h-5 text-blue-700" />
                         </div>
-
-                        <div className="relative w-full md:w-72 border border-gray-400">
-                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                            <input
-                                type="text"
-                                placeholder="Search catalogs..."
-                                className="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                            />
+                        <div>
+                            <p className="text-xs font-bold text-gray-500 mb-1">{lang === 'ENG' ? 'Phone' : '전화 문의'}</p>
+                            <a href="tel:031-475-5549" className="font-bold text-gray-900 hover:text-blue-700 transition-colors">031-475-5549</a>
                         </div>
                     </div>
-
-                    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                        <ul className="divide-y divide-gray-100">
-                            {filteredCatalogs.map(catalog => (
-                                <li key={catalog.id} className="p-6 flex items-center justify-between hover:bg-gray-50 transition-colors group">
-                                    <div className="flex items-center">
-                                        <div className="w-10 h-10 rounded bg-blue-50 text-blue-700 flex items-center justify-center mr-4">
-                                            <FileText className="w-5 h-5" />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-gray-900 group-hover:text-blue-700 transition-colors">{catalog.title}</h4>
-                                            <div className="flex gap-3 text-xs text-gray-500 mt-1">
-                                                <span className="font-medium bg-gray-100 px-2 rounded uppercase text-[10px] tracking-wider">{catalog.category}</span>
-                                                <span>PDF / {catalog.size}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button className="flex items-center text-sm font-bold text-blue-700 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded transition-colors">
-                                        <Download className="w-4 h-4 mr-2" />
-                                        Download
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
-                        {filteredCatalogs.length === 0 && (
-                            <div className="p-12 text-center text-gray-500">
-                                No catalogs found in this category.
-                            </div>
-                        )}
+                    <div className="flex items-center gap-4 p-5 bg-gray-50 rounded-xl border border-gray-200">
+                        <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                            <Mail className="w-5 h-5 text-blue-700" />
+                        </div>
+                        <div>
+                            <p className="text-xs font-bold text-gray-500 mb-1">{lang === 'ENG' ? 'Email' : '이메일 문의'}</p>
+                            <p className="font-bold text-gray-900">icecuve84@naver.com</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     );
 }

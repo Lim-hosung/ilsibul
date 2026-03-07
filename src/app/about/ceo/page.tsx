@@ -8,7 +8,7 @@ export default function CEOPage() {
         <>
             <Hero
                 title={lang === 'ENG' ? 'CEO Message' : 'CEO 인사말'}
-                imageSrc="https://images.unsplash.com/photo-1565814329452-e1efa11c5e8d?q=80&w=2670&auto=format&fit=crop"
+                imageSrc="https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=2670&auto=format&fit=crop"
                 size="sm"
             />
             <section className="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -14,7 +14,7 @@ export default function EnergyPage() {
     return (
         <>
             <Hero
-                title={lang === 'ENG' ? 'High-Performance Materials\nfor Future Energy' : '미래 에너지 산업을 위한\n고성능 소재 솔루션'}
+                title={lang === 'ENG' ? 'High-Performance Materials for Future Energy' : '미래 에너지 산업을 위한 고성능 소재 솔루션'}
                 subtitle={lang === 'ENG' ? 'Energy Industry' : '에너지 산업'}
                 imageSrc="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2670&auto=format&fit=crop"
                 size="sm"

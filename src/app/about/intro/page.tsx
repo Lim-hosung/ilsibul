@@ -16,7 +16,7 @@ export default function IntroPage() {
     return (
         <>
             <Hero
-                title={lang === 'ENG' ? 'Total Solution Company\nfor Special Steel Bar' : '특수강 봉강 유통·가공의\n토털 솔루션 기업'}
+                title={lang === 'ENG' ? 'Total Solution Company for Special Steel Bar' : '특수강 봉강 유통·가공의 토털 솔루션 기업'}
                 imageSrc="https://images.unsplash.com/photo-1565814329452-e1efa11c5e8d?q=80&w=2670&auto=format&fit=crop"
                 size="sm"
             />

@@ -4,12 +4,19 @@ import { useState, useEffect, useCallback, ReactNode } from 'react';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+interface SlideCTA {
+    labelKOR: string;
+    labelENG: string;
+    href: string;
+}
+
 interface Slide {
     imageSrc: string;
     titleKOR: string;
     titleENG: string;
     subtitleKOR: string;
     subtitleENG: string;
+    ctas?: SlideCTA[];
 }
 
 interface HeroSliderProps {
@@ -59,17 +66,20 @@ export function HeroSlider({ slides, lang, children, interval = 6000 }: HeroSlid
                 return (
                     <div
                         key={idx}
-                        className="absolute inset-0 transition-opacity duration-900"
+                        className="absolute inset-0"
                         style={{
                             opacity: isActive ? 1 : isPrev ? 0 : 0,
                             transition: 'opacity 0.9s ease-in-out',
                             zIndex: isActive ? 2 : isPrev ? 1 : 0,
                         }}
                     >
-                        {/* Ken Burns image */}
-                        <div
-                            className={`absolute inset-0 bg-cover bg-center ${isActive ? 'ken-burns' : ''}`}
-                            style={{ backgroundImage: `url(${slide.imageSrc})` }}
+                        {/* Background image using img tag for better reliability */}
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                            src={slide.imageSrc}
+                            alt=""
+                            className={`absolute inset-0 w-full h-full object-cover ${isActive ? 'ken-burns' : ''}`}
+                            loading={idx === 0 ? 'eager' : 'lazy'}
                         />
                         {/* Gradient overlay */}
                         <div className="absolute inset-0 bg-gradient-to-r from-gray-950/85 via-gray-900/60 to-gray-900/20" />
@@ -93,7 +103,7 @@ export function HeroSlider({ slides, lang, children, interval = 6000 }: HeroSlid
                         {/* Title */}
                         <h1
                             key={`title-${current}`}
-                            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white tracking-wide mb-6 leading-[1.1]"
+                            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white tracking-wide mb-6 leading-[1.1] whitespace-pre-line"
                             style={{ animation: 'slideUp 0.8s ease-out forwards' }}
                         >
                             {lang === 'ENG' ? slides[current].titleENG : slides[current].titleKOR}
@@ -102,22 +112,31 @@ export function HeroSlider({ slides, lang, children, interval = 6000 }: HeroSlid
                         {/* Subtitle */}
                         <p
                             key={`sub-${current}`}
-                            className="text-lg sm:text-xl text-gray-300 font-medium max-w-2xl leading-relaxed mb-10"
+                            className="text-lg sm:text-xl text-gray-300 font-medium max-w-2xl leading-relaxed mb-10 whitespace-pre-line"
                             style={{ animation: 'slideUp 0.8s ease-out 0.15s both' }}
                         >
                             {lang === 'ENG' ? slides[current].subtitleENG : slides[current].subtitleKOR}
                         </p>
 
                         {/* CTA Buttons */}
-                        {children && (
-                            <div
-                                key={`cta-${current}`}
-                                className="flex flex-wrap gap-4"
-                                style={{ animation: 'slideUp 0.8s ease-out 0.3s both' }}
-                            >
-                                {children}
-                            </div>
-                        )}
+                        <div
+                            key={`cta-${current}`}
+                            className="flex flex-wrap gap-3"
+                            style={{ animation: 'slideUp 0.8s ease-out 0.3s both' }}
+                        >
+                            {slides[current].ctas
+                                ? slides[current].ctas!.map((cta, i) => (
+                                    <Link
+                                        key={i}
+                                        href={cta.href}
+                                        className="px-5 py-2.5 bg-white/15 text-white font-bold rounded-lg backdrop-blur-sm border border-white/25 hover:bg-blue-600 hover:border-blue-500 transition-all duration-200 text-sm"
+                                    >
+                                        {lang === 'ENG' ? cta.labelENG : cta.labelKOR}
+                                    </Link>
+                                ))
+                                : children
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
@@ -145,8 +164,8 @@ export function HeroSlider({ slides, lang, children, interval = 6000 }: HeroSlid
                         key={idx}
                         onClick={() => goTo(idx)}
                         className={`transition-all duration-500 rounded-full ${idx === current
-                                ? 'w-8 h-2 bg-blue-400'
-                                : 'w-2 h-2 bg-white/40 hover:bg-white/70'
+                            ? 'w-8 h-2 bg-blue-400'
+                            : 'w-2 h-2 bg-white/40 hover:bg-white/70'
                             }`}
                         aria-label={`Slide ${idx + 1}`}
                     />

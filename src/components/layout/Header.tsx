@@ -43,9 +43,11 @@ export function Header() {
                     <div className="flex justify-between items-center h-20">
                         {/* Logo */}
                         <div className="flex-shrink-0 flex items-center">
-                            <Link href="/" className="text-2xl font-bold tracking-tighter text-blue-900 flex items-center gap-2">
+                            <Link href="/" className="text-2xl font-bold tracking-tighter text-blue-900 flex items-center gap-2.5">
                                 <div className="w-8 h-8 bg-blue-700 text-white rounded-sm flex items-center justify-center font-black">A1</div>
                                 <span>Special Steel</span>
+                                <span className="hidden sm:inline text-gray-300 font-light">|</span>
+                                <span className="hidden sm:inline text-base font-bold text-gray-500 tracking-normal">에이원 특수강</span>
                             </Link>
                         </div>
 
@@ -112,38 +114,50 @@ export function Header() {
                         {currentNavItems.map((item) => (
                             <div key={item.name} className="border-b border-gray-100 pb-4 last:border-0 pl-2">
                                 <div className="flex items-center justify-between">
-                                    <Link
-                                        href={item.href}
-                                        className="text-xl sm:text-2xl font-bold text-gray-800 hover:text-blue-700 tracking-tight transition-colors inline-block"
-                                    >
-                                        {item.name}
-                                    </Link>
-
-                                    {item.submenu && (
+                                    {item.submenu ? (
                                         <button
                                             onClick={() => toggleSubMenu(item.name)}
-                                            className="p-2 text-gray-400 hover:text-blue-700 transition-colors"
+                                            className="text-xl sm:text-2xl font-bold text-gray-800 hover:text-blue-700 tracking-tight transition-colors inline-flex items-center gap-3 w-full text-left"
                                         >
-                                            <ChevronRight className={`w-6 h-6 transition-transform duration-300 ${openSubMenus[item.name] ? 'rotate-90 text-blue-700' : ''}`} />
+                                            {item.name}
+                                            <ChevronRight className={`w-6 h-6 transition-transform duration-300 ml-auto flex-shrink-0 ${openSubMenus[item.name] ? 'rotate-90 text-blue-700' : 'text-gray-400'}`} />
                                         </button>
+                                    ) : (
+                                        <Link
+                                            href={item.href}
+                                            className="text-xl sm:text-2xl font-bold text-gray-800 hover:text-blue-700 tracking-tight transition-colors inline-block"
+                                        >
+                                            {item.name}
+                                        </Link>
                                     )}
                                 </div>
 
-                                {item.submenu && (
-                                    <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openSubMenus[item.name] ? 'max-h-96 mt-4 opacity-100' : 'max-h-0 opacity-0'}`}>
-                                        <div className="pl-4 border-l-2 border-blue-100 space-y-3">
-                                            {item.submenu.map((sub) => (
-                                                <Link
-                                                    key={sub.name}
-                                                    href={sub.href}
-                                                    className="block text-base font-semibold text-gray-500 hover:text-blue-700 transition-colors py-1"
-                                                >
-                                                    {sub.name}
-                                                </Link>
-                                            ))}
+                                {item.submenu && (() => {
+                                    const navItem = item as { tagline?: string; description?: string; submenu: { name: string; href: string }[] };
+                                    return (
+                                        <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openSubMenus[item.name] ? 'max-h-[480px] mt-4 opacity-100' : 'max-h-0 opacity-0'}`}>
+                                            {navItem.tagline && (
+                                                <div className="mb-4 bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+                                                    <p className="text-sm font-bold text-blue-800 mb-1">{'"'}{navItem.tagline}{'"'}</p>
+                                                    {navItem.description && (
+                                                        <p className="text-xs text-blue-700 leading-relaxed">{navItem.description}</p>
+                                                    )}
+                                                </div>
+                                            )}
+                                            <div className="pl-4 border-l-2 border-blue-100 space-y-3">
+                                                {item.submenu.map((sub) => (
+                                                    <Link
+                                                        key={sub.name}
+                                                        href={sub.href}
+                                                        className="block text-base font-semibold text-gray-500 hover:text-blue-700 transition-colors py-1"
+                                                    >
+                                                        {sub.name}
+                                                    </Link>
+                                                ))}
+                                            </div>
                                         </div>
-                                    </div>
-                                )}
+                                    );
+                                })()}
                             </div>
                         ))}
                     </nav>
