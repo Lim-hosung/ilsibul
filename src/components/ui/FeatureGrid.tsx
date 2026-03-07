@@ -25,10 +25,10 @@ export function FeatureGrid({ title, subtitle, features, columns = 3 }: FeatureG
     };
 
     return (
-        <section className="py-10 lg:py-32 bg-white">
+        <section className="py-8 lg:py-16 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div className="mb-16 md:mb-24 max-w-3xl">
+                <div className="mb-8 md:mb-12 max-w-3xl">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight mb-6">{title}</h2>
                     {subtitle && (
                         <p className="text-lg text-gray-500 leading-relaxed font-medium">
@@ -37,7 +37,7 @@ export function FeatureGrid({ title, subtitle, features, columns = 3 }: FeatureG
                     )}
                 </div>
 
-                <div className={`grid grid-cols-1 ${colClasses[columns]} gap-x-8 gap-y-16`}>
+                <div className={`grid grid-cols-1 ${colClasses[columns]} gap-x-8 gap-y-8`}>
                     {features.map((feature, idx) => {
                         const content = (
                             <>

@@ -10,14 +10,14 @@ import { useLang } from '@/lib/LanguageContext';
 
 const heroSlides = [
   {
-    imageSrc: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2670&auto=format&fit=crop',
+    imageSrc: '/images/hero/hero-1.jpg',
     titleKOR: '강철 같은 신뢰, \n특수강 전문 파트너',
     titleENG: 'Steel-Grade Trust, \nYour Special Steel Partner',
     subtitleKOR: '국산 특수강 유통ㆍ가공의 선두주자\n2008년 창립 이래 세아베스틸의 공식 대리점으로서 특수강 유통부터 절단, 가공,\n제품개발 솔루션까지 고객의 산업 현장에 최적화된 토털 철강 솔루션을 제공합니다.',
     subtitleENG: 'Leading Korea\'s special steel distribution & processing since 2008 — Official SeAH Besteel dealer offering total solutions from distribution to cutting, processing and product development.',
   },
   {
-    imageSrc: 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?q=80&w=2670&auto=format&fit=crop',
+    imageSrc: '/images/hero/hero-2.jpg',
     titleKOR: '단순 유통을 넘어, \n고객 맞춤형 토털 솔루션으로',
     titleENG: 'Beyond Distribution, \nTotal Solutions Tailored to You',
     subtitleKOR: '에이원특수강은 유통ㆍ절단ㆍ가공을 하나의 프로세스로 통합하여 고객이 필요로\n하는 최적의 소재를 정확한 규격으로 공급합니다.',
@@ -31,7 +31,7 @@ const heroSlides = [
     ],
   },
   {
-    imageSrc: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2670&auto=format&fit=crop',
+    imageSrc: '/images/hero/hero-3.jpg',
     titleKOR: '정밀 산업을 위한 \n프리미엄 소재 라인업',
     titleENG: 'Premium Material Lineup\nfor Precision Industries',
     subtitleKOR: '에이원특수강은 특수강, 이차가공재, 대형단조, 형단조까지 다양한 제품군을 통해\n고객 산업의 요구에 대응합니다.',
@@ -44,7 +44,7 @@ const heroSlides = [
     ],
   },
   {
-    imageSrc: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=2670&auto=format&fit=crop',
+    imageSrc: '/images/hero/hero-4.jpg',
     titleKOR: '산업의 심장부에 공급되는 \n에이원특수강의 소재',
     titleENG: 'Materials from A1 Special Steel\nSupplied to the Heart of Industry',
     subtitleKOR: '에이원특수강의 제품은 국가 핵심 산업 전반에 걸쳐 안전과 성능의 기반이 됩니다.',
@@ -66,25 +66,25 @@ export default function Home() {
     {
       title: "유통",
       description: "세아베스틸 공식 대리점으로서 S45C, SCM, SNCM 등 국산 특수강 전 강종을 안정적으로 공급합니다.",
-      imageUrl: "https://images.unsplash.com/photo-1535813547-99c456a41d4a?w=800&auto=format&fit=crop",
+      imageUrl: "/images/services/distribution.jpg",
       href: "/business/distribution"
     },
     {
       title: "절단",
       description: "서큐레이터 11대 · 밴드쓰 6대를 보유한 자체 설비로 고객 맞춤 규격의 신속 정밀 절단 가공을 제공합니다.",
-      imageUrl: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&auto=format&fit=crop",
+      imageUrl: "/images/services/cutting.jpg",
       href: "/business/cutting"
     },
     {
       title: "제품개발 솔루션",
       description: "강종 선택부터 열처리 방향 결정까지, 30년 노하우로 고객 제품 개발 단계에서 최적 소재를 함께 설계합니다.",
-      imageUrl: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&auto=format&fit=crop",
+      imageUrl: "/images/services/solution.jpg",
       href: "/business/solution"
     },
     {
       title: "수출",
       description: "국내를 넘어 아시아 · 중동 등 제3국 수출 시장으로 특수강 공급망을 글로벌로 확장하고 있습니다.",
-      imageUrl: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&auto=format&fit=crop",
+      imageUrl: "/images/services/export.jpg",
       href: "/business/export"
     }
   ];
@@ -93,25 +93,25 @@ export default function Home() {
     {
       title: "Distribution",
       description: "As an official SeAH Besteel dealer, we stably supply all grades of domestic special steel bars — S45C, SCM, SNCM and more.",
-      imageUrl: "https://images.unsplash.com/photo-1535813547-99c456a41d4a?w=800&auto=format&fit=crop",
+      imageUrl: "/images/services/distribution.jpg",
       href: "/business/distribution"
     },
     {
       title: "Cutting",
       description: "With 11 circulators and 6 band saws in-house, we deliver fast, precision custom cutting to your exact specifications.",
-      imageUrl: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&auto=format&fit=crop",
+      imageUrl: "/images/services/cutting.jpg",
       href: "/business/cutting"
     },
     {
       title: "Solutions",
       description: "From steel grade selection to heat treatment direction, our 30+ years of know-how help co-design optimal materials at the product development stage.",
-      imageUrl: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&auto=format&fit=crop",
+      imageUrl: "/images/services/solution.jpg",
       href: "/business/solution"
     },
     {
       title: "Export",
       description: "Beyond Korea, we are expanding our special steel supply chain globally into Asia, the Middle East, and other international markets.",
-      imageUrl: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&auto=format&fit=crop",
+      imageUrl: "/images/services/export.jpg",
       href: "/business/export"
     }
   ];

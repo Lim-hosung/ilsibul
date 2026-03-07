@@ -16,11 +16,11 @@ interface StaggeredVerticalGridProps {
 
 export function StaggeredVerticalGrid({ title, subtitle, features }: StaggeredVerticalGridProps) {
     return (
-        <section className="py-10 lg:py-32 bg-white">
+        <section className="py-8 lg:py-16 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Header Section */}
-                <div className="mb-12 md:mb-20">
+                <div className="mb-6 md:mb-10">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight mb-4 whitespace-pre-line">
                         {title}
                     </h2>
