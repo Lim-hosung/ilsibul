@@ -220,7 +220,7 @@ export default function Home() {
     {
       title: '중장비',
       description: '굴삭기, 로더 등 가혹한 환경을 견디는 중장비 핵심 부품용 고강도 특수강을 공급합니다.',
-      imageUrl: 'https://images.unsplash.com/photo-1541888059639-5e7ec9b5336e?w=800&auto=format&fit=crop',
+      imageUrl: '/images/industry/heavy-equipment.jpg',
       href: '/industry/heavy-equipment'
     },
     {
@@ -232,13 +232,13 @@ export default function Home() {
     {
       title: '방산',
       description: '철저한 품질 관리가 요구되는 방산업체에 국방 규격을 통과한 최상급 고합금강을 납품합니다.',
-      imageUrl: 'https://images.unsplash.com/photo-1596200223708-ed87afcf8ca7?w=800&auto=format&fit=crop',
+      imageUrl: '/images/industry/defense.jpg',
       href: '/industry/defense'
     },
     {
       title: '조선',
       description: '선박 엔진 및 핵심 구조물에 사용되는 해수 부식에 강한 고품질 특수강을 공급합니다.',
-      imageUrl: 'https://images.unsplash.com/photo-1559863261-39506fcbe57b?w=800&auto=format&fit=crop',
+      imageUrl: '/images/industry/shipbuilding.jpg',
       href: '/industry/shipbuilding'
     },
     {
@@ -253,7 +253,7 @@ export default function Home() {
     {
       title: 'Heavy Equipment',
       description: 'We supply high-strength special steel for core components of heavy equipment like excavators and loaders to endure harsh environments.',
-      imageUrl: 'https://images.unsplash.com/photo-1541888059639-5e7ec9b5336e?w=800&auto=format&fit=crop',
+      imageUrl: '/images/industry/heavy-equipment.jpg',
       href: '/industry/heavy-equipment'
     },
     {
@@ -265,13 +265,13 @@ export default function Home() {
     {
       title: 'Defense',
       description: 'We supply premium high-alloy steel that meets defense specifications for contractors requiring strict quality control.',
-      imageUrl: 'https://images.unsplash.com/photo-1596200223708-ed87afcf8ca7?w=800&auto=format&fit=crop',
+      imageUrl: '/images/industry/defense.jpg',
       href: '/industry/defense'
     },
     {
       title: 'Shipbuilding',
       description: 'We supply high-quality special steel highly resistant to seawater corrosion, used in ship engines and core structures.',
-      imageUrl: 'https://images.unsplash.com/photo-1559863261-39506fcbe57b?w=800&auto=format&fit=crop',
+      imageUrl: '/images/industry/shipbuilding.jpg',
       href: '/industry/shipbuilding'
     },
     {
