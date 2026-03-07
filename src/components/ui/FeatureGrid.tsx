@@ -25,7 +25,7 @@ export function FeatureGrid({ title, subtitle, features, columns = 3 }: FeatureG
     };
 
     return (
-        <section className="py-20 lg:py-32 bg-white">
+        <section className="py-10 lg:py-32 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="mb-16 md:mb-24 max-w-3xl">

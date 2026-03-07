@@ -2,6 +2,7 @@
 
 import { HeroSlider } from '@/components/ui/HeroSlider';
 import { FeatureGrid } from '@/components/ui/FeatureGrid';
+import { StaggeredVerticalGrid } from '@/components/ui/StaggeredVerticalGrid';
 import { CTASection } from '@/components/ui/CTASection';
 import Link from 'next/link';
 import { Wrench, ShieldCheck, Layers, Globe } from 'lucide-react';
@@ -317,21 +318,23 @@ export default function Home() {
 
       {/* 제품소개 */}
       <div className="bg-gray-50 border-y border-gray-100">
-        <FeatureGrid
+        <StaggeredVerticalGrid
           title={lang === 'ENG' ? 'Our Product Lineup' : '취급 제품 라인업'}
-          subtitle={lang === 'ENG' ? 'Products' : '제품소개'}
+          subtitle={lang === 'ENG'
+            ? 'We offer a variety of high-quality special steel materials and custom precision processed products.'
+            : '합금강, 탄소강 등 다양한 고품질 특수강 소재와 고객 맞춤형 정밀 가공품을 제공합니다.'}
           features={productFeatures}
-          columns={4}
         />
       </div>
 
       {/* 적용산업 */}
       <div className="bg-white">
-        <FeatureGrid
+        <StaggeredVerticalGrid
           title={lang === 'ENG' ? 'Industries We Serve' : '에이원특수강이 함께하는 산업'}
-          subtitle={lang === 'ENG' ? 'Industries' : '적용산업'}
+          subtitle={lang === 'ENG'
+            ? 'We supply top-tier special steel solutions that form the backbone of core national industries.'
+            : '자동차, 방산, 조선 등 국가 핵심 산업의 근간이 되는 최상의 특수강 솔루션을 공급합니다.'}
           features={industryFeatures}
-          columns={3}
         />
       </div>
 
