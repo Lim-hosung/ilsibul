@@ -166,25 +166,25 @@ export default function Home() {
     {
       title: '특수강',
       description: '합금강·탄소강·고합금강 봉강 등 자동차, 방산, 중장비에 최적화된 고품질 특수강 소재를 공급합니다.',
-      imageUrl: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2670&auto=format&fit=crop',
+      imageUrl: '/images/products/special-steel.jpg',
       href: '/products/special-steel'
     },
     {
       title: '이차가공재',
       description: 'PM재·CD재 등 정밀 가공재를 통해 고객의 세밀한 가공 요구와 엄격한 품질 기준을 충족합니다.',
-      imageUrl: 'https://images.unsplash.com/photo-1621905252507-b35492d90cb4?w=800&auto=format&fit=crop',
+      imageUrl: '/images/products/secondary.jpg',
       href: '/products/secondary'
     },
     {
       title: '대형단조',
       description: '에너지, 해양 플랜트 및 대규모 산업 현장에서 필수적으로 요구되는 핵심 대형 단조품을 제공합니다.',
-      imageUrl: 'https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=800&auto=format&fit=crop',
+      imageUrl: '/images/products/large-forging.jpg',
       href: '/products/large-forging'
     },
     {
       title: '형단조',
       description: '복잡한 형상을 요구하는 정밀 단조품을 생산하여 각 산업 분야의 다양한 수요에 완벽히 대응합니다.',
-      imageUrl: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&auto=format&fit=crop',
+      imageUrl: '/images/products/die-forging.jpg',
       href: '/products/die-forging'
     }
   ];
@@ -193,25 +193,25 @@ export default function Home() {
     {
       title: 'Special Steel',
       description: 'We supply high-quality alloy, carbon, and high-alloy steel bars optimized for automotive, defense, and heavy equipment.',
-      imageUrl: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2670&auto=format&fit=crop',
+      imageUrl: '/images/products/special-steel.jpg',
       href: '/products/special-steel'
     },
     {
       title: 'Secondary Processed Materials',
       description: 'We meet stringent quality standards and precision requirements with materials like PM and CD.',
-      imageUrl: 'https://images.unsplash.com/photo-1621905252507-b35492d90cb4?w=800&auto=format&fit=crop',
+      imageUrl: '/images/products/secondary.jpg',
       href: '/products/secondary'
     },
     {
       title: 'Large Forging',
       description: 'We provide essential large forgings required in energy, offshore plants, and large-scale industrial sites.',
-      imageUrl: 'https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=800&auto=format&fit=crop',
+      imageUrl: '/images/products/large-forging.jpg',
       href: '/products/large-forging'
     },
     {
       title: 'Die Forging',
       description: 'We flawlessly respond to diverse industrial demands by producing precision forgings for complex shapes.',
-      imageUrl: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&auto=format&fit=crop',
+      imageUrl: '/images/products/die-forging.jpg',
       href: '/products/die-forging'
     }
   ];
