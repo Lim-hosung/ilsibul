@@ -103,7 +103,7 @@ export function HeroSlider({ slides, lang, children, interval = 6000 }: HeroSlid
                         {/* Title */}
                         <h1
                             key={`title-${current}`}
-                            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white tracking-wide mb-6 leading-[1.1] whitespace-pre-line"
+                            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-wide mb-6 leading-[1.1] whitespace-pre-line"
                             style={{ animation: 'slideUp 0.8s ease-out forwards' }}
                         >
                             {lang === 'ENG' ? slides[current].titleENG : slides[current].titleKOR}

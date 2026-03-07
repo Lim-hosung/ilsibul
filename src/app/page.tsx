@@ -46,7 +46,7 @@ const heroSlides = [
   {
     imageSrc: '/images/hero/hero-4.jpg',
     titleKOR: '산업의 심장부에 공급되는 \n에이원특수강의 소재',
-    titleENG: 'Materials from A1 Special Steel\nSupplied to the Heart of Industry',
+    titleENG: 'Materials from\nA1 Special Steel\nSupplied to the Heart of Industry',
     subtitleKOR: '에이원특수강의 제품은 국가 핵심 산업 전반에 걸쳐 안전과 성능의 기반이 됩니다.',
     subtitleENG: 'A1 Special Steel\'s products form the foundation of safety and performance across Korea\'s key industries.',
     ctas: [
