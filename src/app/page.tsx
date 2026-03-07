@@ -282,6 +282,7 @@ export default function Home() {
   ];
 
   const keyStrengths = lang === 'ENG' ? keyStrengthsENG : keyStrengthsKOR;
+  const coreProducts = lang === 'ENG' ? coreProductsENG : coreProductsKOR;
   const productFeatures = lang === 'ENG' ? productFeaturesENG : productFeaturesKOR;
   const industryFeatures = lang === 'ENG' ? industryFeaturesENG : industryFeaturesKOR;
 
@@ -303,9 +304,16 @@ export default function Home() {
         </Link>
       </HeroSlider>
 
-
-
-
+      {/* Core Products Grid (사업소개) */}
+      <FeatureGrid
+        title={lang === 'ENG' ? 'Products & Services' : '주요 취급 품목 및 서비스'}
+        subtitle={lang === 'ENG'
+          ? 'We distribute SeAH Besteel special steel bars and provide in-house cutting and processing services.'
+          : '세아베스틸 특수강 봉강 전문 유통과 자체 절단 가공 서비스를 제공합니다.'
+        }
+        features={coreProducts}
+        columns={4}
+      />
 
       {/* 제품소개 */}
       <div className="bg-gray-50 border-y border-gray-100">
