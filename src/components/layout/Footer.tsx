@@ -10,7 +10,7 @@ export function Footer() {
     const t = {
         desc: lang === 'ENG'
             ? 'Official SeAH Besteel dealer specializing in special steel bar distribution, cutting processing, and total solutions for Korean industry.'
-            : '세아베스틸 공식 대리점. 특수강 봉강 유통·절단 가공·토털 솔루션 전문기업.',
+            : '세아베스틸 공식 대리점.\n특수강 봉강 유통·절단 가공·토털 솔루션 전문기업.',
         address: lang === 'ENG' ? '145 Mayu-ro, Siheung-si, Gyeonggi-do' : '경기도 시흥시 마유로 145',
         copy: lang === 'ENG'
             ? `© ${new Date().getFullYear()} A1 Special Steel Co., Ltd. All rights reserved.`

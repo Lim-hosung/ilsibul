@@ -46,7 +46,7 @@ export function FeatureGrid({ title, subtitle, features, columns = 3 }: FeatureG
                                         <img
                                             src={feature.imageUrl}
                                             alt={feature.title}
-                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-81"
                                         />
                                     </div>
                                 )}
