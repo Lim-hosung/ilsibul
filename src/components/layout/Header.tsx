@@ -41,7 +41,7 @@ export function Header() {
     return (
         <>
             <header
-                className="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-all duration-300"
+                className="fixed top-0 left-0 right-0 z-[60] bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300"
                 onMouseLeave={() => setIsMegaMenuOpen(false)}
             >
                 <div className="w-full px-4 sm:px-6 lg:px-12">
@@ -100,9 +100,8 @@ export function Header() {
                     </div>
                 </div>
 
-                {/* Desktop Mega Menu Dropdown Panel */}
                 <div
-                    className={`hidden lg:block absolute top-20 left-0 w-full bg-white/95 backdrop-blur-3xl shadow-lg border-t border-gray-100 transition-all duration-300 overflow-hidden ${isMegaMenuOpen ? 'max-h-[600px] opacity-100 border-b' : 'max-h-0 opacity-0 border-b-0'}`}
+                    className={`hidden lg:block absolute top-20 left-0 w-full bg-white shadow-2xl border-t border-gray-100 transition-all duration-300 overflow-hidden ${isMegaMenuOpen ? 'max-h-[600px] opacity-100 border-b' : 'max-h-0 opacity-0 border-b-0'}`}
                 >
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                         <div className="grid grid-cols-5 gap-8">
@@ -187,14 +186,14 @@ export function Header() {
             {/* Backdrop Overlay */}
             {isMenuOpen && (
                 <div
-                    className="fixed inset-0 bg-black/40 z-50 backdrop-blur-sm transition-opacity"
+                    className="fixed inset-0 bg-black/40 z-[90] backdrop-blur-sm transition-opacity"
                     onClick={() => setIsMenuOpen(false)}
                 />
             )}
 
             {/* Right Sliding Floating Menu */}
             <div
-                className={`fixed top-0 right-0 h-full w-full sm:w-[500px] bg-gray-50 shadow-2xl z-50 transform transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                className={`fixed top-0 right-0 h-full w-full sm:w-[500px] bg-gray-50 shadow-2xl z-[100] transform transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
             >
                 {/* Menu Header */}
                 <div className="flex justify-between items-center px-8 h-20 border-b border-gray-200 bg-white flex-shrink-0">
