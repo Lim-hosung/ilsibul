@@ -51,11 +51,12 @@ export function Footer() {
 
                     {/* Brand block */}
                     <div className="lg:col-span-2 space-y-6">
-                        <Link href="/" className="text-2xl font-bold tracking-tighter text-white flex items-center gap-2">
-                            <div className="w-8 h-8 bg-blue-700 text-white rounded-sm flex items-center justify-center font-black">A1</div>
-                            <span>Special Steel</span>
+                        <Link href="/" className="flex items-center">
+                            <div className="bg-white p-2 rounded-lg inline-flex">
+                                <img src="/images/logo.png" alt="A1 특수강 로고" className="h-10 w-auto object-contain" />
+                            </div>
                         </Link>
-                        <p className="text-sm text-gray-400 max-w-sm leading-relaxed">{t.desc}</p>
+                        <p className="text-sm text-gray-400 max-w-sm leading-relaxed whitespace-pre-line">{t.desc}</p>
                         <div className="space-y-3 pt-4">
                             <div className="flex items-start text-sm">
                                 <MapPin className="w-5 h-5 mr-3 text-blue-500 flex-shrink-0 mt-0.5" />

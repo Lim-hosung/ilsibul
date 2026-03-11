@@ -51,6 +51,14 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
+      keyframes: {
+        shine: {
+          '100%': { transform: 'translateX(300%) skew(-12deg)' },
+        },
+      },
+      animation: {
+        shine: 'shine 1.5s ease-in-out infinite',
+      },
     },
   },
   plugins: [],

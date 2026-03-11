@@ -9,6 +9,7 @@ import { useLang } from '@/lib/LanguageContext';
 
 export function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
     const [openSubMenus, setOpenSubMenus] = useState<Record<string, boolean>>({});
     const { lang, setLang } = useLang();
     const pathname = usePathname();
@@ -17,6 +18,7 @@ export function Header() {
 
     useEffect(() => {
         setIsMenuOpen(false);
+        setIsMegaMenuOpen(false);
         setOpenSubMenus({});
     }, [pathname]);
 
@@ -38,23 +40,37 @@ export function Header() {
 
     return (
         <>
-            <header className="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+            <header
+                className="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-all duration-300"
+                onMouseLeave={() => setIsMegaMenuOpen(false)}
+            >
                 <div className="w-full px-4 sm:px-6 lg:px-12">
                     <div className="flex justify-between items-center h-20">
                         {/* Logo */}
                         <div className="flex-shrink-0 flex items-center">
-                            <Link href="/" className="text-2xl font-bold tracking-tighter text-blue-900 flex items-center gap-2.5">
-                                <div className="w-8 h-8 bg-blue-700 text-white rounded-sm flex items-center justify-center font-black">A1</div>
-                                <span>Special Steel</span>
-                                <span className="hidden sm:inline text-gray-300 font-light">|</span>
-                                <span className="hidden sm:inline text-base font-bold text-gray-500 tracking-normal">에이원 특수강</span>
+                            <Link href="/" className="flex items-center">
+                                <img src="/images/logo.png" alt="A1 특수강 로고" className="h-10 w-auto object-contain" />
                             </Link>
                         </div>
+
+                        {/* Desktop Mega Menu Triggers (Hidden on Mobile) */}
+                        <nav
+                            className="hidden lg:flex items-center space-x-12 absolute left-1/2 transform -translate-x-1/2 h-full"
+                            onMouseEnter={() => setIsMegaMenuOpen(true)}
+                        >
+                            {currentNavItems.map(item => (
+                                <div key={item.name} className="h-full flex items-center group cursor-pointer">
+                                    <span className="text-gray-800 font-bold text-lg hover:text-blue-700 transition-colors">
+                                        {item.name}
+                                    </span>
+                                </div>
+                            ))}
+                        </nav>
 
                         {/* Right side: ENG/KOR toggle + Hamburger */}
                         <div className="flex items-center gap-4">
                             {/* Language Toggle in Top Nav */}
-                            <div className="flex items-center gap-1 text-sm font-bold">
+                            <div className="flex items-center gap-1 text-sm font-bold z-50">
                                 <button
                                     className={`px-2 py-1 rounded transition-colors ${lang === 'ENG' ? 'text-blue-700 bg-blue-50' : 'text-gray-400 hover:text-gray-700'}`}
                                     onClick={() => setLang('ENG')}
@@ -70,16 +86,99 @@ export function Header() {
                                 </button>
                             </div>
 
-                            {/* Hamburger */}
+                            {/* Hamburger (Hidden on Desktop since Mega Menu is used) */}
                             <button
                                 type="button"
-                                className="p-2 -mr-2 rounded-md text-gray-900 hover:text-blue-700 hover:bg-gray-100 focus:outline-none transition-colors"
+                                className="lg:hidden p-2 -mr-2 rounded-md text-gray-900 hover:text-blue-700 hover:bg-gray-100 focus:outline-none transition-colors z-50"
                                 onClick={() => setIsMenuOpen(true)}
                                 aria-expanded={isMenuOpen}
                             >
                                 <span className="sr-only">Open main menu</span>
                                 <Menu className="h-8 w-8" aria-hidden="true" />
                             </button>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Desktop Mega Menu Dropdown Panel */}
+                <div
+                    className={`hidden lg:block absolute top-20 left-0 w-full bg-white/95 backdrop-blur-3xl shadow-lg border-t border-gray-100 transition-all duration-300 overflow-hidden ${isMegaMenuOpen ? 'max-h-[600px] opacity-100 border-b' : 'max-h-0 opacity-0 border-b-0'}`}
+                >
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                        <div className="grid grid-cols-5 gap-8">
+                            {/* Animated Logo Banner using logo2.png */}
+                            {/* Static Info Column / Banner */}
+                            <div className="col-span-1 pr-8 border-r border-gray-100 flex flex-col justify-between">
+                                <div>
+                                    <Link
+                                        href="/about"
+                                        className="block relative rounded-xl overflow-hidden mb-6 group"
+                                        onClick={() => setIsMegaMenuOpen(false)}
+                                    >
+                                        <div className="absolute inset-0 bg-blue-900/90 group-hover:bg-blue-800/90 transition-colors z-10" />
+                                        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-blue-600 opacity-90" />
+                                        <div className="relative z-20 p-5 min-h-[140px] flex flex-col justify-between">
+                                            <div>
+                                                <div className="w-8 h-1 bg-blue-400 mb-3" />
+                                                <h3 className="text-white font-bold text-lg leading-snug tracking-tight">
+                                                    {lang === 'ENG' ? 'A1 Special Steel' : '에이원 특수강'}
+                                                </h3>
+                                            </div>
+                                            <div className="flex items-center text-blue-100 text-xs font-bold mt-4 group-hover:text-white transition-colors">
+                                                {lang === 'ENG' ? 'Learn More' : '회사소개 보기'}
+                                                <ChevronRight className="w-3 h-3 ml-1 transform group-hover:translate-x-1 transition-transform" />
+                                            </div>
+                                        </div>
+                                    </Link>
+                                    <p className="text-sm text-gray-500 leading-relaxed font-medium">
+                                        {lang === 'ENG' ? 'New standards for special steel distribution.' : '특수강 유통 및 가공의 새로운 기준'}
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Menu Columns */}
+                            <div className="col-span-4 grid grid-cols-4 gap-8">
+                                {currentNavItems.map(item => (
+                                    <div key={item.name} className="flex flex-col">
+                                        <h3 className="text-sm font-black text-gray-900 mb-6 pb-2 border-b border-gray-100 tracking-tight">
+                                            {item.name}
+                                        </h3>
+                                        <div className="flex flex-col space-y-3">
+                                            {item.submenu ? (
+                                                item.submenu.map(sub => (
+                                                    <Link
+                                                        key={sub.name}
+                                                        href={sub.href}
+                                                        className="text-sm font-semibold text-gray-500 hover:text-blue-700 transition-colors inline-block w-fit"
+                                                        onClick={() => setIsMegaMenuOpen(false)}
+                                                    >
+                                                        {sub.name}
+                                                    </Link>
+                                                ))
+                                            ) : (
+                                                <Link
+                                                    href={item.href}
+                                                    className="text-sm font-semibold text-gray-500 hover:text-blue-700 transition-colors inline-block w-fit"
+                                                    onClick={() => setIsMegaMenuOpen(false)}
+                                                >
+                                                    {lang === 'ENG' ? 'Go to ' : ''}{item.name}{lang === 'ENG' ? '' : ' 바로가기'}
+                                                </Link>
+                                            )}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                    {/* Bottom Quick Links Action Bar */}
+                    <div className="bg-gray-50 border-t border-gray-100 px-8 py-4">
+                        <div className="max-w-7xl mx-auto flex justify-end space-x-8">
+                            <Link href="/catalog" className="text-sm font-bold text-gray-600 hover:text-blue-700 transition-colors" onClick={() => setIsMegaMenuOpen(false)}>
+                                {lang === 'ENG' ? 'E-Catalog' : 'E-카탈로그 다운로드'}
+                            </Link>
+                            <Link href="/contact" className="text-sm font-bold text-gray-600 hover:text-blue-700 transition-colors" onClick={() => setIsMegaMenuOpen(false)}>
+                                {lang === 'ENG' ? 'Contact Us' : '제품 문의하기'}
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -97,8 +196,11 @@ export function Header() {
             <div
                 className={`fixed top-0 right-0 h-full w-full sm:w-[500px] bg-gray-50 shadow-2xl z-50 transform transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
             >
-                {/* Menu Header - 닫기 버튼만 */}
-                <div className="flex justify-end items-center px-8 py-8 border-b border-gray-200 bg-white">
+                {/* Menu Header */}
+                <div className="flex justify-between items-center px-8 h-20 border-b border-gray-200 bg-white flex-shrink-0">
+                    <Link href="/" className="flex items-center" onClick={() => setIsMenuOpen(false)}>
+                        <img src="/images/logo.png" alt="A1 특수강 로고" className="h-9 w-auto object-contain" />
+                    </Link>
                     <button
                         onClick={() => setIsMenuOpen(false)}
                         className="text-gray-500 hover:text-gray-900 transition-colors p-1"
@@ -111,8 +213,12 @@ export function Header() {
                 {/* Main Navigation List */}
                 <div className="flex-grow overflow-y-auto px-8 py-10">
                     <nav className="space-y-8">
-                        {currentNavItems.map((item) => (
-                            <div key={item.name} className="border-b border-gray-100 pb-4 last:border-0 pl-2">
+                        {currentNavItems.map((item, index) => (
+                            <div
+                                key={item.name}
+                                className={`border-b border-gray-100 pb-4 last:border-0 pl-2 transition-all duration-500 transform ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                                style={{ transitionDelay: isMenuOpen ? `${100 + index * 75}ms` : '0ms' }}
+                            >
                                 <div className="flex items-center justify-between">
                                     {item.submenu ? (
                                         <button
@@ -145,11 +251,12 @@ export function Header() {
                                                 </div>
                                             )}
                                             <div className="pl-4 border-l-2 border-blue-100 space-y-3">
-                                                {item.submenu.map((sub) => (
+                                                {item.submenu.map((sub, subIndex) => (
                                                     <Link
                                                         key={sub.name}
                                                         href={sub.href}
-                                                        className="block text-base font-semibold text-gray-500 hover:text-blue-700 transition-colors py-1"
+                                                        className={`block text-base font-semibold text-gray-500 hover:text-blue-700 transition-all duration-300 transform ${openSubMenus[item.name] ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}
+                                                        style={{ transitionDelay: openSubMenus[item.name] ? `${subIndex * 50}ms` : '0ms' }}
                                                     >
                                                         {sub.name}
                                                     </Link>
