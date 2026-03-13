@@ -36,8 +36,8 @@ export default function LocationPage() {
                 </div>
                 <div className="relative rounded-3xl overflow-hidden aspect-video shadow-2xl">
                     <img
-                        src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2670&auto=format&fit=crop"
-                        alt="Office Location"
+                        src="/images/about/company-exterior.png"
+                        alt="에이원특수강 전경"
                         className="w-full h-full object-cover"
                     />
                 </div>

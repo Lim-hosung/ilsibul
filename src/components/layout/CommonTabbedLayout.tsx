@@ -18,8 +18,9 @@ interface CommonTabbedLayoutProps {
     titleEn: string;
     descriptionKo: string;
     descriptionEn: string;
-    bannerImage: string;
+    bannerImage?: string;
     tabs: TabItem[];
+    bannerTheme?: 'blue' | 'gold' | 'cyan' | 'teal' | 'indigo' | 'normal';
 }
 
 export default function CommonTabbedLayout({
@@ -30,16 +31,32 @@ export default function CommonTabbedLayout({
     descriptionEn,
     bannerImage,
     tabs,
+    bannerTheme = 'normal',
 }: CommonTabbedLayoutProps) {
     const pathname = usePathname();
     const { lang } = useLang();
 
+    // Default banner if none provided
+    const defaultBanner = '/images/hero/3d-steel-1.png';
+
     // Find the active tab to get its specific banner image
     const activeTab = tabs.find(tab => tab.href === pathname);
-    const activeBanner = activeTab?.bannerImage || bannerImage;
+    const activeBanner = activeTab?.bannerImage || bannerImage || defaultBanner;
 
     const title = lang === 'ENG' ? titleEn : titleKo;
     const description = lang === 'ENG' ? descriptionEn : descriptionKo;
+
+    // Theme filter mapping
+    const themeFilters: Record<string, string> = {
+        normal: 'brightness-[0.4]',
+        blue: 'brightness-[0.5] hue-rotate-[0deg] saturate-[1.2]',
+        gold: 'brightness-[0.5] hue-rotate-[180deg] saturate-[1.5] contrast-[1.1]',
+        cyan: 'brightness-[0.5] hue-rotate-[140deg] saturate-[1.3]',
+        teal: 'brightness-[0.5] hue-rotate-[100deg] saturate-[1.4]',
+        indigo: 'brightness-[0.5] hue-rotate-[240deg] saturate-[1.2]',
+    };
+
+    const currentFilter = themeFilters[bannerTheme] || themeFilters.normal;
 
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col pt-0">
@@ -50,7 +67,7 @@ export default function CommonTabbedLayout({
                     <img
                         src={activeBanner}
                         alt={`${title} banner`}
-                        className="w-full h-full object-cover filter brightness-[0.4] transition-all duration-700"
+                        className={`w-full h-full object-cover transition-all duration-700 ${currentFilter}`}
                     />
                 </div>
 

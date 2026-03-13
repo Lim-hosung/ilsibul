@@ -93,7 +93,7 @@ export default function IntroPage() {
             {/* Vision Section */}
             <section className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 <div className="relative rounded-3xl overflow-hidden aspect-video shadow-2xl">
-                    <img src="/images/hero/building.png" alt="Vision" className="w-full h-full object-cover" />
+                    <img src="/images/about/company-exterior.png" alt="A1 Special Steel Vision" className="w-full h-full object-cover" />
                 </div>
                 <div className="space-y-8">
                     <div className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg font-bold text-sm">Our Vision</div>

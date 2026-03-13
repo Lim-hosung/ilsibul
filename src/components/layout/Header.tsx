@@ -108,9 +108,9 @@ export function Header() {
                 >
                     <div className="w-full py-10">
                         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                            <div className="grid grid-cols-6 gap-8">
-                                {/* Static Info Column / Banner - Column 1 */}
-                                <div className="pr-8 border-r border-gray-100 flex flex-col justify-between">
+                            <div className="grid grid-cols-7 gap-10">
+                                {/* Static Info Column / Banner - Column 1-2 */}
+                                <div className="col-span-2 pr-10 border-r border-gray-100 flex flex-col">
                                     <div>
                                         <Link
                                             href="/about"
@@ -119,7 +119,7 @@ export function Header() {
                                         >
                                             <div className="absolute inset-0 bg-blue-900/90 group-hover:bg-blue-800/90 transition-colors z-10" />
                                             <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-blue-600 opacity-90" />
-                                            <div className="relative z-20 p-5 min-h-[140px] flex flex-col justify-between">
+                                            <div className="relative z-20 p-10 min-h-[260px] flex flex-col justify-between">
                                                 <div>
                                                     <div className="w-8 h-1 bg-blue-400 mb-3" />
                                                     <h3 className="text-white font-bold text-lg leading-snug tracking-tight">
@@ -132,13 +132,13 @@ export function Header() {
                                                 </div>
                                             </div>
                                         </Link>
-                                        <p className="text-sm text-gray-500 leading-relaxed font-medium">
+                                        <p className="text-sm text-gray-500 leading-relaxed font-medium mt-8">
                                             {lang === 'ENG' ? 'New standards for special steel distribution.' : '특수강 유통 및 가공의 새로운 기준'}
                                         </p>
                                     </div>
                                 </div>
-
-                                {/* Menu Columns - Column 2-6 */}
+                                
+                                {/* Menu Columns - Column 3-7 */}
                                 <div className="col-span-5 grid grid-cols-5 gap-8">
                                     {currentNavItems.map(item => (
                                         <div key={item.name} className="flex flex-col">

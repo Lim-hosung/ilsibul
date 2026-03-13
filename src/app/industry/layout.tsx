@@ -17,7 +17,7 @@ export default function IndustryLayout({ children }: { children: React.ReactNode
             titleEn="INDUSTRY"
             descriptionKo="다양한 핵심 산업 분야에 중추적인 역할을 담당하는 기초 소재"
             descriptionEn="Base materials playing a pivotal role in various core industries"
-            bannerImage="/images/hero/3d-steel-2.png"
+            bannerTheme="indigo"
             tabs={industryTabs}
         >
             {children}

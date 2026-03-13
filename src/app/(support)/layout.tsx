@@ -15,7 +15,7 @@ export default function SupportLayout({ children }: { children: React.ReactNode 
             titleEn="SUPPORT"
             descriptionKo="고객의 성공을 위해 에이원특수강이 함께합니다."
             descriptionEn="A1 Special Steel is with you for your success."
-            bannerImage="/images/hero/3d-steel-1.png"
+            bannerTheme="teal"
             tabs={supportTabs}
         >
             {children}

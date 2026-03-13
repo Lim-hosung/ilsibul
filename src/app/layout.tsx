@@ -29,6 +29,16 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.png?v=1', type: 'image/png' },
+      { url: '/favicon.ico?v=1', sizes: 'any' },
+    ],
+    apple: [
+      { url: '/favicon.png?v=1', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico?v=1',
   }
 };
 
