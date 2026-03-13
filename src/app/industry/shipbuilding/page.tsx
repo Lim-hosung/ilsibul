@@ -1,33 +1,39 @@
 'use client';
 
 import { useLang } from '@/lib/LanguageContext';
-import { Hero } from '@/components/ui/Hero';
+import { CTASection } from '@/components/ui/CTASection';
 
 export default function ShipbuildingPage() {
     const { lang } = useLang();
     const isEng = lang === 'ENG';
 
     return (
-        <div className="flex flex-col space-y-16">
-            <Hero
-                title={isEng ? 'Shipbuilding Industry' : '조선 산업'}
-                subtitle={isEng 
-                    ? 'Marine Strength — Core Materials for Shipbuilding' 
-                    : '바다 위의 강인함, 조선 산업의 핵심 소재'}
-                imageSrc="/images/industry/shipbuilding.jpg"
-                size="sm"
-            />
+        <div className="flex flex-col space-y-24">
 
-            <section className="max-w-5xl mx-auto px-4 w-full">
-                <div className="mb-12">
-                    <h2 className="text-3xl font-black text-gray-900 mb-6 tracking-tight">
-                        {isEng ? 'Resilience Against the Ocean' : '대양에 맞서는 회복탄력성'}
-                    </h2>
-                    <p className="text-gray-600 text-lg leading-relaxed italic border-l-4 border-blue-600 pl-6">
-                        {isEng
-                            ? 'Materials satisfying corrosion resistance in seawater and high-load strength for propulsion shafts and engine components.'
-                            : '해수에 대한 부식 저항성과 추진축, 엔진 부품의 고하중 강도를 만족하는 핵심 소재를 공급합니다.'}
-                    </p>
+            <section className="max-w-6xl mx-auto px-4 w-full pt-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 tracking-tight leading-tight whitespace-pre-line">
+                            {isEng ? 'Resilience Against \nthe Ocean' : '대양에 맞서는 \n회복탄력성'}
+                        </h2>
+                        <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                            {isEng
+                                ? 'Materials for shipbuilding must satisfy corrosion resistance and high-load strength for propulsion shafts and engine components. A1 Special Steel supplies the core materials that withstand the harsh marine environment.'
+                                : '해수에 대한 부식 저항성과 추진축, 엔진 부품의 고하중 강도를 동시에 만족하는 핵심 소재를 공급합니다. 거친 해양 환경을 견뎌내는 조선 산업용 고성능 특수강의 기준을 제시합니다.'}
+                        </p>
+                        <div className="flex flex-wrap gap-4">
+                            <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full font-bold text-sm">#Marine_Steel</span>
+                            <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full font-bold text-sm">#Corrosion_Resistance</span>
+                            <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full font-bold text-sm">#Propulsion_Shaft</span>
+                        </div>
+                    </div>
+                    <div className="relative rounded-3xl overflow-hidden aspect-video shadow-2xl">
+                        <img
+                            src="/images/industry/shipbuilding.jpg"
+                            alt="Shipbuilding Industry"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
                 </div>
 
                 <div className="bg-blue-50/50 rounded-2xl p-8 mb-12 border border-blue-100">
@@ -81,6 +87,15 @@ export default function ShipbuildingPage() {
                     </table>
                 </div>
             </section>
+
+            <CTASection
+                title={isEng ? 'Materials for the Open Sea' : '대양을 가르는 강인한 소재'}
+                description={isEng
+                    ? 'Corrosion-resistant and high-strength steel for marine excellence.'
+                    : '내식성과 고강도를 겸비한 조선용 특수강 솔루션을 제공합니다.'}
+                buttonText={isEng ? 'Request Collaboration' : '협력 문의하기'}
+                buttonHref="/contact"
+            />
         </div>
     );
 }

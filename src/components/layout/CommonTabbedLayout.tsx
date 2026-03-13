@@ -63,7 +63,7 @@ export default function CommonTabbedLayout({
             {/* 2. Sticky Tab Navigation */}
             <div className="sticky top-20 z-40 bg-white border-b border-gray-200 shadow-sm w-full">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex overflow-x-auto hide-scrollbar">
+                    <div className="flex overflow-x-auto overflow-y-hidden hide-scrollbar">
                         <div className="flex space-x-8 min-w-max mx-auto py-4">
                             {tabs.map((tab) => {
                                 const isActive = pathname === tab.href;

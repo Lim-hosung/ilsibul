@@ -1,33 +1,39 @@
 'use client';
 
 import { useLang } from '@/lib/LanguageContext';
-import { Hero } from '@/components/ui/Hero';
+import { CTASection } from '@/components/ui/CTASection';
 
 export default function EnergyPage() {
     const { lang } = useLang();
     const isEng = lang === 'ENG';
 
     return (
-        <div className="flex flex-col space-y-16">
-            <Hero
-                title={isEng ? 'Energy Industry' : '에너지 산업'}
-                subtitle={isEng 
-                    ? 'High-Performance Materials for Future Energy' 
-                    : '미래 에너지 산업을 위한 고성능 소재 솔루션'}
-                imageSrc="/images/industry/energy.jpg"
-                size="sm"
-            />
+        <div className="flex flex-col space-y-24">
 
-            <section className="max-w-5xl mx-auto px-4 w-full">
-                <div className="mb-12">
-                    <h2 className="text-3xl font-black text-gray-900 mb-6 tracking-tight">
-                        {isEng ? 'Sustaining Power Through Quality' : '품질을 통한 동력 유지'}
-                    </h2>
-                    <p className="text-gray-600 text-lg leading-relaxed italic border-l-4 border-blue-600 pl-6">
-                        {isEng
-                            ? 'Materials for power plants, wind turbines, and LNG facilities that must withstand high temperature, high pressure, or cryogenic environments.'
-                            : '발전소, 풍력 터빈, LNG 설비 등 고온, 고압 또는 극저온 환경을 견뎌야 하는 고성능 소재를 공급합니다.'}
-                    </p>
+            <section className="max-w-6xl mx-auto px-4 w-full pt-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 tracking-tight leading-tight whitespace-pre-line">
+                            {isEng ? 'Sustaining Power \nThrough Quality' : '품질을 통한 \n동력 유지'}
+                        </h2>
+                        <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                            {isEng
+                                ? 'We supply high-performance materials for power plants, wind turbines, and LNG facilities that must withstand high temperature, high pressure, or cryogenic environments with absolute reliability.'
+                                : '발전소, 풍력 터빈, LNG 설비 등 고온·고압 또는 극저온의 극한 환경을 견뎌야 하는 에너지 산업용 고기능성 소재를 공급합니다. 완벽한 품질로 미래 에너지 인프라의 안정성을 책임집니다.'}
+                        </p>
+                        <div className="flex flex-wrap gap-4">
+                            <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full font-bold text-sm">#Energy_Industry</span>
+                            <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full font-bold text-sm">#Cryogenic_Steel</span>
+                            <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full font-bold text-sm">#Wind_Power</span>
+                        </div>
+                    </div>
+                    <div className="relative rounded-3xl overflow-hidden aspect-video shadow-2xl">
+                        <img
+                            src="https://images.unsplash.com/photo-1466611653911-95281773ad90?q=80&w=2670&auto=format&fit=crop"
+                            alt="Energy Industry"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
                 </div>
 
                 <div className="bg-blue-50/50 rounded-2xl p-8 mb-12 border border-blue-100">
@@ -81,6 +87,15 @@ export default function EnergyPage() {
                     </table>
                 </div>
             </section>
+
+            <CTASection
+                title={isEng ? 'Solutions for Greener Energy' : '그린 에너지를 위한 솔루션'}
+                description={isEng
+                    ? 'Optimize your energy infrastructure with our high-durability special steel.'
+                    : '내구성 높은 특수강 소재로 에너지 자산의 수명을 연장하세요.'}
+                buttonText={isEng ? 'Get Specialized Design' : '맞춤 설계 문의하기'}
+                buttonHref="/contact"
+            />
         </div>
     );
 }

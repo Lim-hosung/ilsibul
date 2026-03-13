@@ -1,6 +1,6 @@
 'use client';
-import { Hero } from '@/components/ui/Hero';
 import { useLang } from '@/lib/LanguageContext';
+import { CTASection } from '@/components/ui/CTASection';
 
 const steelGrades = [
     { grade: 'S45C', nameKOR: '기계구조용 탄소강', nameENG: 'Carbon Steel for Machine Structural Use', descKOR: '범용성이 높은 중탄소강. 조질처리 후 기계적 성질 우수.', descENG: 'General-purpose medium-carbon steel. Excellent mechanical properties after QT.' },
@@ -15,21 +15,33 @@ export default function SpecialSteelPage() {
     const { lang } = useLang();
 
     return (
-        <>
-            <Hero
-                title={lang === 'ENG' ? 'High Strength & Precision — The Standard for Industrial Materials' : '고강도·고정밀, 산업 핵심 소재의 기준'}
-                subtitle={lang === 'ENG' ? 'S45C, SCM and all grades of domestic special steel bars' : 'S45C, SCM 등 국산 특수강 봉강 전 강종 취급'}
-                imageSrc="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&auto=format&fit=crop"
-                size="sm"
-            />
+        <div className="flex flex-col space-y-24 pt-12">
 
-            <section className="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-black text-gray-900 mb-6">{lang === 'ENG' ? 'Special Steel' : '특수강'}</h2>
-                <p className="text-gray-600 leading-relaxed text-lg mb-12">
-                    {lang === 'ENG'
-                        ? 'Special steel is a high-performance material that enhances strength, toughness, and wear resistance by adding alloying elements such as chromium, molybdenum, and nickel to general carbon steel. A1 Special Steel directly supplies key steel grades including carbon steel for machine structural use (S45C) and chromium-molybdenum steel (SCM) from SeAH Besteel, providing both stable quality and price competitiveness simultaneously.'
-                        : '특수강은 일반 탄소강에 크롬, 몰리브덴, 니켈 등 합금 원소를 첨가하여 강도·인성·내마모성을 향상시킨 고기능 소재입니다. 에이원특수강은 기계구조용 탄소강(S45C)과 크롬몰리브덴강(SCM) 등 주요 강종을 세아베스틸로부터 직공급받아 안정적인 품질과 가격 경쟁력을 동시에 제공합니다.'}
-                </p>
+            <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 tracking-tight leading-tight whitespace-pre-line">
+                            {lang === 'ENG' ? 'High Strength & Precision \nThe Standard for Industrial Materials' : '고강도·고정밀 \n산업 핵심 소재의 기준'}
+                        </h2>
+                        <p className="text-gray-600 leading-relaxed text-lg mb-8">
+                            {lang === 'ENG'
+                                ? 'Special steel is a high-performance material that enhances strength, toughness, and wear resistance by adding alloying elements. A1 Special Steel supplies key steel grades directly from SeAH Besteel, providing both stable quality and price competitiveness.'
+                                : '합금 원소를 첨가하여 강도와 내마모성을 극대화한 특수강은 현대 산업의 필수 소재입니다. 에이원특수강은 세아베스틸로부터 고품질 탄소강(S45C) 및 합금강(SCM)을 직접 공급받아 최고의 신뢰성을 보장합니다.'}
+                        </p>
+                        <div className="flex flex-wrap gap-4">
+                            <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full font-bold text-sm">#S45C_Carbon_Steel</span>
+                            <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full font-bold text-sm">#SCM_Alloy_Steel</span>
+                            <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full font-bold text-sm">#SeAH_Partnership</span>
+                        </div>
+                    </div>
+                    <div className="relative rounded-3xl overflow-hidden aspect-video shadow-2xl">
+                        <img
+                            src="/images/hero/hero-3.jpg"
+                            alt="Special Steel"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+                </div>
 
                 <div className="bg-blue-50 rounded-lg px-6 py-3 mb-10 inline-block">
                     <span className="font-bold text-blue-900">{lang === 'ENG' ? 'Main Products: ' : '주요 제품: '}</span>
@@ -58,6 +70,15 @@ export default function SpecialSteelPage() {
                     </table>
                 </div>
             </section>
-        </>
+
+            <CTASection
+                title={lang === 'ENG' ? 'Reliable Special Steel Supply' : '신뢰할 수 있는 특수강 공급'}
+                description={lang === 'ENG'
+                    ? 'Official SeAH Besteel dealer providing the best material solutions.'
+                    : '세아베스틸 공식 대리점으로서 최적의 소재 솔루션을 제안합니다.'}
+                buttonText={lang === 'ENG' ? 'Request Quote' : '견적 요청하기'}
+                buttonHref="/contact"
+            />
+        </div>
     );
 }

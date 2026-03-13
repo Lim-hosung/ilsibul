@@ -1,4 +1,3 @@
-import { Hero } from '@/components/ui/Hero';
 import { FeatureGrid } from '@/components/ui/FeatureGrid';
 import { CTASection } from '@/components/ui/CTASection';
 import { Anchor, Settings, Zap } from 'lucide-react';
@@ -29,35 +28,48 @@ export default function OpenDieForgingPage() {
     ];
 
     return (
-        <>
-            <Hero
-                title="Open Die Forging"
-                subtitle="Massive Scale. Microscopic Precision."
-                imageSrc="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1600&auto=format&fit=crop"
-            />
+        <div className="flex flex-col space-y-24 pt-12">
 
-            <div className="py-20 bg-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-lg text-gray-600 leading-relaxed">
-                <p>
-                    Utilizing some of the largest forging presses in the world, our Open Die Forging division shapes
-                    massive steel ingots into critical components for heavy industry. Our integrated process, from
-                    steelmaking to final machining, guarantees the structural integrity required for applications
-                    where failure is not an option.
-                </p>
-            </div>
+            <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 tracking-tight leading-tight whitespace-pre-line">
+                            Massive Scale. \nMicroscopic Precision.
+                        </h2>
+                        <p className="text-gray-600 leading-relaxed text-lg mb-8">
+                            Utilizing some of the largest forging presses in the world, our Open Die Forging division shapes
+                            massive steel ingots into critical components for heavy industry. Our integrated process
+                            guarantees the structural integrity required for applications where failure is not an option.
+                        </p>
+                        <div className="flex flex-wrap gap-4">
+                            <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full font-bold text-sm">#Open_Die_Forging</span>
+                            <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full font-bold text-sm">#Heavy_Duty</span>
+                            <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full font-bold text-sm">#Custom_Forging</span>
+                        </div>
+                    </div>
+                    <div className="relative rounded-3xl overflow-hidden aspect-video shadow-2xl">
+                        <img
+                            src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2670&auto=format&fit=crop"
+                            alt="Open Die Forging"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+                </div>
+            </section>
 
-            <div className="bg-gray-50 border-y border-gray-100">
+            <section className="bg-gray-50 border-y border-gray-100 py-16">
                 <FeatureGrid
                     title="Major Forged Products"
                     features={products}
                     columns={3}
                 />
-            </div>
+            </section>
 
             <CTASection
                 title="Discuss Your Custom Project"
                 description="We specialize in forging custom geometries up to 150 tons."
                 buttonText="Request a Quote"
             />
-        </>
+        </div>
     );
 }
