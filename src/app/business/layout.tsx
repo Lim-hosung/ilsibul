@@ -17,7 +17,7 @@ export default function BusinessLayout({ children }: { children: React.ReactNode
             titleEn="BUSINESS"
             descriptionKo="품질 경쟁력 확보를 위한 최적의 글로벌 자재 소싱 네트워크"
             descriptionEn="Optimal global material sourcing network for quality competitiveness"
-            bannerImage="/images/hero/factory.jpg"
+            bannerImage="/images/hero/hero-2.jpg"
             tabs={businessTabs}
         >
             {children}

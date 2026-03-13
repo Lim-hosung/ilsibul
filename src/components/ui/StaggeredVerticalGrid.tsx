@@ -50,14 +50,14 @@ export function StaggeredVerticalGrid({ title, subtitle, features }: StaggeredVe
 
                                 {/* Text Content overlaying at the top/left depending on design */}
                                 <div className="absolute top-6 left-6 right-6">
-                                    <h3 className="text-xl md:text-2xl font-bold text-white tracking-wide drop-shadow-md pb-2">
+                                    <h3 className="text-xl md:text-2xl font-bold text-white tracking-wide drop-shadow-md pb-2 whitespace-pre-line">
                                         {feature.title}
                                     </h3>
                                 </div>
 
                                 <div className="absolute inset-x-6 bottom-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out">
                                     {feature.description && (
-                                        <p className="text-white/90 text-sm leading-relaxed line-clamp-3">
+                                        <p className="text-white/90 text-sm leading-relaxed line-clamp-3 whitespace-pre-line">
                                             {feature.description}
                                         </p>
                                     )}

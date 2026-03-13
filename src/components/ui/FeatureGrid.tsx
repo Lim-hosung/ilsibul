@@ -29,9 +29,9 @@ export function FeatureGrid({ title, subtitle, features, columns = 3 }: FeatureG
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="mb-8 md:mb-12 max-w-3xl">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight mb-6">{title}</h2>
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight mb-6 whitespace-pre-line">{title}</h2>
                     {subtitle && (
-                        <p className="text-lg text-gray-500 leading-relaxed font-medium">
+                        <p className="text-lg text-gray-500 leading-relaxed font-medium whitespace-pre-line">
                             {subtitle}
                         </p>
                     )}
@@ -57,11 +57,11 @@ export function FeatureGrid({ title, subtitle, features, columns = 3 }: FeatureG
                                     </div>
                                 )}
 
-                                <h3 className="text-xl font-bold text-gray-900 mb-3 tracking-tight group-hover:text-blue-700 transition-colors">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3 tracking-tight group-hover:text-blue-700 transition-colors whitespace-pre-line">
                                     {feature.title}
                                 </h3>
 
-                                <p className="text-gray-500 leading-relaxed max-w-sm">
+                                <p className="text-gray-500 leading-relaxed max-w-sm whitespace-pre-line">
                                     {feature.description}
                                 </p>
 

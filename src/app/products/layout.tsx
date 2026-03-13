@@ -16,7 +16,7 @@ export default function ProductsLayout({ children }: { children: React.ReactNode
             titleEn="PRODUCTS"
             descriptionKo="엄격한 품질관리가 적용된 최고의 특수강 및 단조 제품 라인업"
             descriptionEn="Premium special steel & forged product lineup under strict quality control"
-            bannerImage="/images/hero/special_steel.jpg"
+            bannerImage="/images/hero/hero-3.jpg"
             tabs={productsTabs}
         >
             {children}

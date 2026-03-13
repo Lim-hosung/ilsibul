@@ -51,10 +51,10 @@ export default function CommonTabbedLayout({
 
                 {/* Text Content */}
                 <div className="relative z-10 text-center px-4 w-full max-w-7xl mx-auto">
-                    <h1 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight">
+                    <h1 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight whitespace-pre-line">
                         {title}
                     </h1>
-                    <p className="text-gray-200 text-sm md:text-lg max-w-2xl mx-auto font-medium">
+                    <p className="text-gray-200 text-sm md:text-lg max-w-2xl mx-auto font-medium whitespace-pre-line">
                         {description}
                     </p>
                 </div>

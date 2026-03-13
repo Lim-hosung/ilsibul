@@ -16,7 +16,7 @@ export default function AboutLayout({ children }: { children: React.ReactNode })
             titleEn="ABOUT US"
             descriptionKo="신뢰와 기술력을 바탕으로 성장하는 에이원특수강입니다."
             descriptionEn="A1 Special Steel growing based on trust and technology."
-            bannerImage="/images/hero/office.jpg"
+            bannerImage="/images/hero/hero-1.jpg"
             tabs={aboutTabs}
         >
             {children}

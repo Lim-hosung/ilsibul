@@ -44,7 +44,7 @@ export default function DistributionPage() {
             {/* Intro Section */}
             <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 tracking-tight leading-tight">
+                    <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 tracking-tight leading-tight whitespace-pre-line">
                         {isEng
                             ? 'Reliable Special Steel \nDistribution Partner'
                             : '철저한 품질과 신뢰를 바탕으로 한 \n특수강 유통의 중심'}

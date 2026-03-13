@@ -78,7 +78,7 @@ export default function IntroPage() {
                 </div>
                 <div className="space-y-8">
                     <div className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg font-bold text-sm">Our Vision</div>
-                    <h3 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
+                    <h3 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight whitespace-pre-line">
                         {isEng
                             ? 'Global Top-Tier Steel \nSolution Provider'
                             : '글로벌 초일류 철강 \n솔루션 프로바이더'}

@@ -48,11 +48,11 @@ export function Hero({
             {/* Content */}
             <div className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 w-full flex ${alignClasses[align]}`}>
                 <div className={`max-w-5xl ${align === 'center' ? 'mx-auto flex flex-col items-center' : ''}`}>
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-wide mb-6 leading-[1.15]">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-wide mb-6 leading-[1.15] whitespace-pre-line">
                         {title}
                     </h1>
                     {subtitle && (
-                        <p className="text-lg sm:text-xl text-gray-300 font-medium max-w-2xl leading-relaxed mb-8">
+                        <p className="text-lg sm:text-xl text-gray-300 font-medium max-w-2xl leading-relaxed mb-8 whitespace-pre-line">
                             {subtitle}
                         </p>
                     )}
