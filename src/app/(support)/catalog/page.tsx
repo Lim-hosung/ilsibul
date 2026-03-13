@@ -13,15 +13,6 @@ export default function CatalogPage() {
     };
 
     return (
-        <>
-            <Hero
-                title={lang === 'ENG' ? 'Check Products & Solutions at a Glance' : '제품과 솔루션을 한눈에 확인하세요'}
-                subtitle={lang === 'ENG'
-                    ? 'A1 Special Steel catalogues with grades, specs, and application details'
-                    : '에이원특수강의 제품 카탈로그를 통해 취급 강종, 규격, 적용 분야에 대한 상세 정보를 확인하실 수 있습니다.'}
-                imageSrc="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=2670&auto=format&fit=crop"
-                size="sm"
-            />
 
             <section className="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Description */}

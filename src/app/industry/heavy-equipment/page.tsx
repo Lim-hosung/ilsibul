@@ -29,7 +29,7 @@ export default function HeavyEquipmentPage() {
                     </div>
                     <div className="relative rounded-3xl overflow-hidden aspect-video shadow-2xl">
                         <img
-                            src="/images/industry/heavy-equipment.jpg"
+                            src="/images/industry/heavy-equipment.png"
                             alt="Heavy Equipment Industry"
                             className="w-full h-full object-cover"
                         />

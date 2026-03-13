@@ -1,7 +1,7 @@
 'use client';
 
 import { useLang } from '@/lib/LanguageContext';
-import { Target, Eye, Heart, BarChart } from 'lucide-react';
+import { Target, Eye, Heart, BarChart, Building2, User, Calendar, MapPin, CheckCircle } from 'lucide-react';
 
 export default function IntroPage() {
     const { lang } = useLang();
@@ -40,16 +40,35 @@ export default function IntroPage() {
 
     return (
         <div className="space-y-24">
-            {/* Overview Section */}
             <section className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-8 tracking-tight">
-                    {isEng ? 'A Trusted Leader in Special Steel' : '강철 같은 신뢰로 미래를 여는 기업'}
+                    {isEng ? 'A Trusted Leader in Special Steel' : '회사개요'}
                 </h2>
                 <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-medium">
                     {isEng
-                        ? 'A1 Special Steel Co., Ltd. has grown as an official dealer of SeAH Besteel, specializing in the distribution and processing of various special steel bars. We provide one-stop solutions from material selection to final delivery.'
-                        : '(주)에이원특수강은 세아베스틸의 공식 대리점으로서, 고품질 특수강 봉강의 유통 및 정밀 절단 가공을 전문으로 합니다. 다년간 축적된 노하우와 최신 자동화 설비를 통해 완벽한 품질의 소재를 고객사의 생산 현장에 직접 공급하고 있습니다.'}
+                        ? 'A1 Special Steel Co., Ltd. has grown as an official dealer of SeAH Besteel, specializing in the distribution and processing of various special steel bars since its establishment in 2008. Representative Director Han-su Na, an expert who was in charge of sales at SeAH Besteel for 30 years, has grown A1 Special Steel into a trusted company in the industry based on his experience and know-how. We operate our own factory in Siwha Industrial Complex in Siheung, Gyeonggi-do, and operate processing facilities such as circulators and band saws, and are evolving into a comprehensive solution company that combines processing and management beyond simple distribution.'
+                        : '㈜에이원특수강은 2008년 설립 이후 세아베스틸의 공식 대리점으로서 국산 특수강 봉강 유통 및 가공 사업을 영위하고 있습니다. 창립자 나한수 대표이사는 세아베스틸에서 30년간 영업을 담당한 전문가로, 그 경험과 노하우를 바탕으로 에이원특수강을 업계의 신뢰받는 기업으로 성장시켜 왔습니다. 경기도 시흥 시화공단에 자체 공장을 보유하고 서큘레이터·밴드쏘 등 가공 설비를 운영하며, 단순 유통을 넘어 가공·관리를 결합한 종합 솔루션 기업으로 진화하고 있습니다.'}
                 </p>
+            </section>
+
+            {/* Info Grid */}
+            <section className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                    { icon: <Building2 className="w-6 h-6 text-blue-600" />, label: isEng ? 'Company Name' : '회사명', value: isEng ? 'A1 Special Steel Co., Ltd.' : '㈜에이원특수강' },
+                    { icon: <User className="w-6 h-6 text-blue-600" />, label: isEng ? 'Representative' : '대표', value: isEng ? 'Han-su Na' : '나한수' },
+                    { icon: <Calendar className="w-6 h-6 text-blue-600" />, label: isEng ? 'Established' : '설립', value: isEng ? '2008' : '2008년' },
+                    { icon: <MapPin className="w-6 h-6 text-blue-600" />, label: isEng ? 'Location' : '소재지', value: isEng ? '145 Mayu-ro, Siheung-si, Gyeonggi-do' : '경기 시흥시 마유로 145' },
+                ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-6 p-8 bg-gray-50 rounded-2xl border border-gray-100 shadow-sm">
+                        <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
+                            {item.icon}
+                        </div>
+                        <div>
+                            <p className="text-sm font-bold text-gray-500 mb-1">{item.label}</p>
+                            <p className="text-xl font-black text-gray-900">{item.value}</p>
+                        </div>
+                    </div>
+                ))}
             </section>
 
             {/* Philosophy / Values */}
@@ -74,7 +93,7 @@ export default function IntroPage() {
             {/* Vision Section */}
             <section className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 <div className="relative rounded-3xl overflow-hidden aspect-video shadow-2xl">
-                    <img src="/images/hero/building.jpg" alt="Vision" className="w-full h-full object-cover" />
+                    <img src="/images/hero/building.png" alt="Vision" className="w-full h-full object-cover" />
                 </div>
                 <div className="space-y-8">
                     <div className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg font-bold text-sm">Our Vision</div>
@@ -125,22 +144,3 @@ function Shield(props: any) {
     )
 }
 
-function CheckCircle(props: any) {
-    return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-            <polyline points="22 4 12 14.01 9 11.01" />
-        </svg>
-    )
-}

@@ -29,7 +29,7 @@ export default function ShipbuildingPage() {
                     </div>
                     <div className="relative rounded-3xl overflow-hidden aspect-video shadow-2xl">
                         <img
-                            src="/images/industry/shipbuilding.jpg"
+                            src="/images/industry/shipbuilding.png"
                             alt="Shipbuilding Industry"
                             className="w-full h-full object-cover"
                         />

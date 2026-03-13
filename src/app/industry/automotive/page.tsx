@@ -29,7 +29,7 @@ export default function AutomotivePage() {
                     </div>
                     <div className="relative rounded-3xl overflow-hidden aspect-video shadow-2xl">
                         <img
-                            src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2672&auto=format&fit=crop"
+                            src="/images/industry/automotive.png"
                             alt="Automotive Industry"
                             className="w-full h-full object-cover"
                         />

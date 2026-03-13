@@ -29,7 +29,7 @@ export default function EnergyPage() {
                     </div>
                     <div className="relative rounded-3xl overflow-hidden aspect-video shadow-2xl">
                         <img
-                            src="https://images.unsplash.com/photo-1466611653911-95281773ad90?q=80&w=2670&auto=format&fit=crop"
+                            src="/images/industry/energy.png"
                             alt="Energy Industry"
                             className="w-full h-full object-cover"
                         />

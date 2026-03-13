@@ -29,7 +29,7 @@ export default function DefensePage() {
                     </div>
                     <div className="relative rounded-3xl overflow-hidden aspect-video shadow-2xl">
                         <img
-                            src="/images/industry/defense.jpg"
+                            src="/images/industry/defense.png"
                             alt="Defense Industry"
                             className="w-full h-full object-cover"
                         />

@@ -9,6 +9,7 @@ interface TabItem {
     name: string;
     nameEn: string;
     href: string;
+    bannerImage?: string;
 }
 
 interface CommonTabbedLayoutProps {
@@ -33,19 +34,23 @@ export default function CommonTabbedLayout({
     const pathname = usePathname();
     const { lang } = useLang();
 
+    // Find the active tab to get its specific banner image
+    const activeTab = tabs.find(tab => tab.href === pathname);
+    const activeBanner = activeTab?.bannerImage || bannerImage;
+
     const title = lang === 'ENG' ? titleEn : titleKo;
     const description = lang === 'ENG' ? descriptionEn : descriptionKo;
 
     return (
-        <div className="min-h-screen bg-gray-50 flex flex-col pt-20">
+        <div className="min-h-screen bg-gray-50 flex flex-col pt-0">
             {/* 1. Hero Banner Area */}
             <div className="relative w-full h-[280px] md:h-[350px] flex items-center justify-center overflow-hidden">
                 {/* Background Image / Overlay */}
                 <div className="absolute inset-0 z-0">
                     <img
-                        src={bannerImage}
+                        src={activeBanner}
                         alt={`${title} banner`}
-                        className="w-full h-full object-cover filter brightness-[0.4]"
+                        className="w-full h-full object-cover filter brightness-[0.4] transition-all duration-700"
                     />
                 </div>
 

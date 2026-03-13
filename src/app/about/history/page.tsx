@@ -7,9 +7,11 @@ export default function HistoryPage() {
     const isEng = lang === 'ENG';
 
     const events = [
-        { year: '2022', title: isEng ? 'A1 Special Steel Established' : '에이원특수강 주식회사 설립', desc: isEng ? 'SeAH Besteel Authorized Distributor status acquired.' : '세아베스틸 지정 대리점 권한 획득' },
-        { year: '2023', title: isEng ? 'Pyeongtaek Processing Center' : '평택 가공센터 가동', desc: isEng ? 'Completion of state-of-the-art cutting facility.' : '최신식 절단 설비 도입 및 물류 거점 확보' },
-        { year: '2024', title: isEng ? 'Business Expansion' : '사업 영역 확장', desc: isEng ? 'Export and secondary processing business launched.' : '수출 및 이차가공재 사업부 신설' },
+        { year: '2008', title: isEng ? 'A1 Special Steel Established' : '㈜에이원특수강 설립' },
+        { year: '2011', title: isEng ? 'Siwha Plant Established' : '경기도 시흥 시화공단 공장 설립, 본격 영업 개시' },
+        { year: '2012', title: isEng ? 'Processing Equipment Introduced' : '가공설비(밴드쏘·서큐레이터) 도입, 절단가공 서비스 시작' },
+        { year: '2015~', title: isEng ? 'Official SeAH Besteel Dealer' : '세아베스틸 공식 대리점 체계 강화, 거래처 확대' },
+        { year: isEng ? 'Present' : '현재', title: isEng ? 'Total Steel Solution Provider' : '특수강 유통·절단·솔루션 토털 서비스 기업으로 성장' },
     ];
 
     return (
@@ -32,7 +34,7 @@ export default function HistoryPage() {
                 </div>
                 <div className="relative rounded-3xl overflow-hidden aspect-video shadow-2xl">
                     <img
-                        src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2670&auto=format&fit=crop"
+                        src="/images/about/history.png"
                         alt="History"
                         className="w-full h-full object-cover"
                     />
@@ -43,10 +45,10 @@ export default function HistoryPage() {
                 <div className="space-y-12">
                     {events.map((event, idx) => (
                         <div key={idx} className="flex gap-8 md:gap-16 items-start">
-                            <div className="text-3xl md:text-4xl font-black text-blue-600 shrink-0 w-24">{event.year}</div>
-                            <div className="pt-2">
-                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">{event.title}</h3>
-                                <p className="text-gray-600 text-lg leading-relaxed">{event.desc}</p>
+                            <div className="text-3xl md:text-3xl font-black text-blue-600 shrink-0 w-24">{event.year}</div>
+                            <div className="pt-1.5 flex items-center gap-4">
+                                <div className="w-3 h-3 rounded-full bg-blue-600 shrink-0" />
+                                <h3 className="text-xl md:text-2xl font-bold text-gray-900">{event.title}</h3>
                             </div>
                         </div>
                     ))}
