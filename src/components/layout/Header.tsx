@@ -45,9 +45,9 @@ export function Header() {
                 onMouseLeave={() => setIsMegaMenuOpen(false)}
             >
                 <div className="max-w-[85rem] mx-auto w-full px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center h-20 w-full">
-                        {/* 1. Logo - W-[300px] aligned with banner width */}
-                        <div className="w-[300px] flex-shrink-0 flex items-center relative z-50 pr-10">
+                    <div className="flex justify-between items-center h-20 w-full">
+                        {/* 1. Logo - W-[300px] aligned with banner width (Desktop only) */}
+                        <div className="w-auto lg:w-[300px] flex-shrink-0 flex items-center relative z-50 lg:pr-10">
                             <Link href="/" className="flex items-center">
                                 <img src="/images/logo.png" alt="A1 특수강 로고" className="h-10 w-auto object-contain" />
                             </Link>
@@ -75,7 +75,7 @@ export function Header() {
                         </nav>
 
                         {/* 3. Right side: ENG/KOR toggle + Hamburger */}
-                        <div className="w-[120px] flex-shrink-0 flex items-center justify-end gap-4 relative z-50">
+                        <div className="w-auto lg:w-[120px] flex-shrink-0 flex items-center justify-end gap-4 relative z-50">
                             {/* Language Toggle */}
                             <div className="flex items-center gap-1 text-sm font-bold z-50">
                                 <button
