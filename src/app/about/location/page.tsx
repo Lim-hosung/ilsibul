@@ -10,7 +10,7 @@ export default function LocationPage() {
     const offices = [
         {
             name: isEng ? 'A1 Special Steel Co., Ltd.' : '㈜에이원특수강',
-            address: isEng ? '145 Mayu-ro, Siheung-si, Gyeonggi-do (Jeongwang-dong)' : '경기도 시흥시 마유로 145 (정왕동) ㈜에이원특수강',
+            address: isEng ? '146 Mayu-ro, Siheung-si, Gyeonggi-do (Jeongwang-dong)' : '경기도 시흥시 마유로 146 (정왕동) ㈜에이원특수강',
             tel: '031-475-5549',
             fax: '031-475-5649'
         }

@@ -66,7 +66,7 @@ export default function LargeForgingPage() {
             </section>
 
             <CTASection
-                title={lang === 'ENG' ? 'Large-Scale Forging Expertise' : '대물 단조의 독보적 기술력'}
+                title={lang === 'ENG' ? 'Large-Scale Forging Expertise' : '대형 단조의 독보적 기술력'}
                 description={lang === 'ENG'
                     ? 'Supporting large core components for shipbuilding and energy industries.'
                     : '조선 및 에너지 산업의 핵심 대형 부품 생산을 지원합니다.'}

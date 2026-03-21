@@ -16,7 +16,7 @@ export default function CEOPage() {
                         className="w-full h-full object-cover"
                     />
                     <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-gray-950 to-transparent">
-                        <p className="text-white font-black text-2xl mb-1">Kim Cheol-Su</p>
+                        <p className="text-white font-black text-2xl mb-1">{isEng ? 'Na Han-su' : '나한수'}</p>
                         <p className="text-blue-400 font-bold uppercase tracking-widest text-sm">CEO of A1 Special Steel</p>
                     </div>
                 </div>
@@ -47,9 +47,9 @@ export default function CEOPage() {
                         </p>
                     </div>
                     <div className="pt-8 border-t border-gray-100">
-                        <div className="text-gray-900 font-black italic text-xl mb-4">㈜에이원특수강 대표이사</div>
+                        <div className="text-gray-900 font-black italic text-xl mb-4">{isEng ? 'CEO of A1 Special Steel' : '㈜에이원특수강 대표이사'}</div>
                         <div className="flex items-end gap-4">
-                            <span className="text-4xl font-black text-gray-900 tracking-tighter">나한수</span>
+                            <span className="text-4xl font-black text-gray-900 tracking-tighter">{isEng ? 'Na Han-su' : '나한수'}</span>
                         </div>
                     </div>
                 </div>

@@ -9,6 +9,7 @@ import { LanguageProvider } from '@/lib/LanguageContext';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://a1-special-steel.vercel.app'),
   title: {
     default: '에이원특수강 | 국산 특수강 봉강 전문 유통기업',
     template: '%s | 에이원특수강',
@@ -31,14 +32,9 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: [
-      { url: '/favicon.png?v=1', type: 'image/png' },
-      { url: '/favicon.ico?v=1', sizes: 'any' },
-    ],
-    apple: [
-      { url: '/favicon.png?v=1', sizes: '180x180', type: 'image/png' },
-    ],
-    shortcut: '/favicon.ico?v=1',
+    icon: '/favicon.png?v=3',
+    shortcut: '/favicon.ico?v=3',
+    apple: '/apple-touch-icon.png?v=3',
   }
 };
 

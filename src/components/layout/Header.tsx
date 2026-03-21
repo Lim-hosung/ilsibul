@@ -47,31 +47,34 @@ export function Header() {
                 <div className="w-full px-4 sm:px-6 lg:px-12">
                     <div className="flex justify-between items-center h-20 relative">
                         {/* Logo - Far Left */}
-                        <div className="flex-shrink-0 flex items-center">
+                        <div className="flex-shrink-0 flex items-center relative z-50">
                             <Link href="/" className="flex items-center">
                                 <img src="/images/logo.png" alt="A1 특수강 로고" className="h-10 w-auto object-contain" />
                             </Link>
                         </div>
 
-                        {/* Centered Navigation Items */}
                         <nav
-                            className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-full"
+                            className="hidden lg:block absolute top-0 left-0 w-full h-full"
                             onMouseEnter={() => setIsMegaMenuOpen(true)}
                         >
-                            <div className="grid grid-cols-6 h-full items-center">
-                                <div className="col-span-1" /> {/* Spacer to align with Mega Menu banner */}
-                                {currentNavItems.map(item => (
-                                    <div key={item.name} className="h-full flex items-center justify-start group cursor-pointer">
-                                        <span className="text-gray-800 font-bold text-lg hover:text-blue-700 transition-colors">
-                                            {item.name}
-                                        </span>
-                                    </div>
-                                ))}
+                            <div className="max-w-[85rem] mx-auto h-full px-4 sm:px-6 lg:px-8">
+                                <div className="grid grid-cols-4 gap-8 h-full items-center">
+                                <div className="col-span-1 pr-10 border-r border-transparent" /> {/* Spacer to align with Mega Menu banner */}
+                                <div className="col-span-3 grid grid-cols-5 gap-8 h-full">
+                                    {currentNavItems.map(item => (
+                                        <div key={item.name} className="h-full flex items-center justify-start group cursor-pointer">
+                                            <span className="text-gray-800 font-bold text-lg hover:text-blue-700 transition-colors">
+                                                {item.name}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+                                </div>
                             </div>
                         </nav>
 
                         {/* Right side: ENG/KOR toggle + Hamburger - Far Right */}
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-4 relative z-50">
                             {/* Language Toggle */}
                             <div className="flex items-center gap-1 text-sm font-bold z-50">
                                 <button
@@ -106,20 +109,24 @@ export function Header() {
                 <div
                     className={`hidden lg:block absolute top-20 left-0 w-full bg-white shadow-2xl border-t border-gray-100 transition-all duration-300 overflow-hidden ${isMegaMenuOpen ? 'max-h-[600px] opacity-100 border-b' : 'max-h-0 opacity-0 border-b-0'}`}
                 >
-                    <div className="w-full py-10">
-                        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                            <div className="grid grid-cols-7 gap-10">
-                                {/* Static Info Column / Banner - Column 1-2 */}
-                                <div className="col-span-2 pr-10 border-r border-gray-100 flex flex-col">
+                    <div className="w-full pt-2 pb-10">
+                        <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+                            <div className="grid grid-cols-4 gap-8">
+                                {/* Static Info Column / Banner - Column 1 */}
+                                <div className="col-span-1 pr-10 border-r border-gray-100 flex flex-col">
                                     <div>
                                         <Link
                                             href="/about"
-                                            className="block relative rounded-xl overflow-hidden mb-6 group"
+                                            className="block relative rounded-xl overflow-hidden mb-6 group aspect-square"
                                             onClick={() => setIsMegaMenuOpen(false)}
                                         >
-                                            <div className="absolute inset-0 bg-blue-900/90 group-hover:bg-blue-800/90 transition-colors z-10" />
-                                            <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-blue-600 opacity-90" />
-                                            <div className="relative z-20 p-10 min-h-[260px] flex flex-col justify-between">
+                                            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors z-10" />
+                                            <img
+                                                src="/images/about/company-exterior.png"
+                                                alt="에이원특수강 전경"
+                                                className="absolute inset-0 w-full h-full object-cover opacity-90"
+                                            />
+                                            <div className="relative z-20 p-8 h-full flex flex-col justify-between">
                                                 <div>
                                                     <div className="w-8 h-1 bg-blue-400 mb-3" />
                                                     <h3 className="text-white font-bold text-lg leading-snug tracking-tight">
@@ -132,19 +139,16 @@ export function Header() {
                                                 </div>
                                             </div>
                                         </Link>
-                                        <p className="text-sm text-gray-500 leading-relaxed font-medium mt-8">
+                                        <p className="text-lg text-black font-bold leading-relaxed mt-10">
                                             {lang === 'ENG' ? 'New standards for special steel distribution.' : '특수강 유통 및 가공의 새로운 기준'}
                                         </p>
                                     </div>
                                 </div>
-                                
-                                {/* Menu Columns - Column 3-7 */}
-                                <div className="col-span-5 grid grid-cols-5 gap-8">
+
+                                {/* Menu Columns - Column 2-4 */}
+                                <div className="col-span-3 grid grid-cols-5 gap-8">
                                     {currentNavItems.map(item => (
                                         <div key={item.name} className="flex flex-col">
-                                            <h3 className="text-sm font-black text-gray-900 mb-6 pb-2 border-b border-gray-100 tracking-tight">
-                                                {item.name}
-                                            </h3>
                                             <div className="flex flex-col space-y-3">
                                                 {item.submenu ? (
                                                     item.submenu.map(sub => (
