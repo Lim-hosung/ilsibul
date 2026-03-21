@@ -3,10 +3,10 @@
 import CommonTabbedLayout from '@/components/layout/CommonTabbedLayout';
 
 const aboutTabs = [
-    { name: '회사개요', nameEn: 'Overview', href: '/about/intro', bannerImage: '/images/회사소개.png' },
-    { name: '연혁', nameEn: 'History', href: '/about/history', bannerImage: '/images/회사소개.png' },
-    { name: 'CEO 인사말', nameEn: 'CEO Message', href: '/about/ceo', bannerImage: '/images/회사소개.png' },
-    { name: '찾아오시는길', nameEn: 'Location', href: '/about/location', bannerImage: '/images/회사소개.png' },
+    { name: '회사개요', nameEn: 'Overview', href: '/about/intro', bannerImage: '/images/about-banner.png' },
+    { name: '연혁', nameEn: 'History', href: '/about/history', bannerImage: '/images/about-banner.png' },
+    { name: 'CEO 인사말', nameEn: 'CEO Message', href: '/about/ceo', bannerImage: '/images/about-banner.png' },
+    { name: '찾아오시는길', nameEn: 'Location', href: '/about/location', bannerImage: '/images/about-banner.png' },
 ];
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {
@@ -18,7 +18,7 @@ export default function AboutLayout({ children }: { children: React.ReactNode })
             descriptionEn="A1 Special Steel growing based on trust and technology."
             bannerTheme="normal"
             tabs={aboutTabs}
-            bannerImage="/images/회사소개.png"
+            bannerImage="/images/about-banner.png"
         >
             {children}
         </CommonTabbedLayout>

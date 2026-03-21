@@ -44,42 +44,38 @@ export function Header() {
                 className="fixed top-0 left-0 right-0 z-[60] bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300"
                 onMouseLeave={() => setIsMegaMenuOpen(false)}
             >
-                <div className="w-full px-4 sm:px-6 lg:px-12">
-                    <div className="flex justify-between items-center h-20 relative">
-                        {/* Logo - Far Left */}
-                        <div className="flex-shrink-0 flex items-center relative z-50">
+                <div className="max-w-[85rem] mx-auto w-full px-4 sm:px-6 lg:px-8">
+                    <div className="flex items-center h-20 w-full">
+                        {/* 1. Logo - W-[300px] aligned with banner width */}
+                        <div className="w-[300px] flex-shrink-0 flex items-center relative z-50 pr-10">
                             <Link href="/" className="flex items-center">
                                 <img src="/images/logo.png" alt="A1 특수강 로고" className="h-10 w-auto object-contain" />
                             </Link>
                         </div>
 
+                        {/* 2. Top Navigation (Responsive flex distribution) */}
                         <nav
-                            className="hidden lg:block absolute top-0 left-0 w-full h-full"
+                            className="hidden lg:flex flex-1 h-full items-center"
                             onMouseEnter={() => setIsMegaMenuOpen(true)}
                         >
-                            <div className="max-w-[85rem] mx-auto h-full px-4 sm:px-6 lg:px-8">
-                                <div className="grid grid-cols-4 gap-8 h-full items-center">
-                                <div className="col-span-1 pr-10 border-r border-transparent" /> {/* Spacer to align with Mega Menu banner */}
-                                <div className="col-span-3 grid grid-cols-5 gap-8 h-full">
-                                    {currentNavItems.map(item => (
-                                        <Link 
-                                            key={item.name} 
-                                            href={item.href}
-                                            className="h-full flex items-center justify-start group cursor-pointer"
-                                            onClick={() => setIsMegaMenuOpen(false)}
-                                        >
-                                            <span className="text-gray-800 font-bold text-lg hover:text-blue-700 transition-colors">
-                                                {item.name}
-                                            </span>
-                                        </Link>
-                                    ))}
-                                </div>
-                                </div>
+                            <div className="w-full flex justify-between items-center h-full px-8 lg:px-[5rem]">
+                                {currentNavItems.map(item => (
+                                    <Link 
+                                        key={item.name} 
+                                        href={item.href}
+                                        className="h-full flex items-center justify-center group cursor-pointer"
+                                        onClick={() => setIsMegaMenuOpen(false)}
+                                    >
+                                        <span className="text-gray-800 font-bold text-[17px] hover:text-blue-700 transition-colors whitespace-nowrap">
+                                            {item.name}
+                                        </span>
+                                    </Link>
+                                ))}
                             </div>
                         </nav>
 
-                        {/* Right side: ENG/KOR toggle + Hamburger - Far Right */}
-                        <div className="flex items-center gap-4 relative z-50">
+                        {/* 3. Right side: ENG/KOR toggle + Hamburger */}
+                        <div className="w-[120px] flex-shrink-0 flex items-center justify-end gap-4 relative z-50">
                             {/* Language Toggle */}
                             <div className="flex items-center gap-1 text-sm font-bold z-50">
                                 <button
@@ -116,9 +112,9 @@ export function Header() {
                 >
                     <div className="w-full pt-2 pb-10">
                         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
-                            <div className="grid grid-cols-4 gap-8">
-                                {/* Static Info Column / Banner - Column 1 */}
-                                <div className="col-span-1 pr-10 border-r border-gray-100 flex flex-col">
+                            <div className="flex">
+                                {/* 1. Banner Column - 300px matched to top Logo */}
+                                <div className="w-[300px] flex-shrink-0 pr-10 border-r border-gray-100 flex flex-col">
                                     <div>
                                         <Link
                                             href="/about"
@@ -144,23 +140,23 @@ export function Header() {
                                                 </div>
                                             </div>
                                         </Link>
-                                        <p className="text-lg text-black font-bold leading-relaxed mt-10">
+                                        <p className="text-base text-black font-bold leading-relaxed mt-8">
                                             {lang === 'ENG' ? 'New standards for special steel distribution.' : '특수강 유통 및 가공의 새로운 기준'}
                                         </p>
                                     </div>
                                 </div>
 
-                                {/* Menu Columns - Column 2-4 */}
-                                <div className="col-span-3 grid grid-cols-5 gap-8">
+                                {/* 2. Menu Columns - Flex distributed corresponding to Top Nav */}
+                                <div className="flex-1 px-8 lg:px-[5rem] flex justify-between">
                                     {currentNavItems.map(item => (
-                                        <div key={item.name} className="flex flex-col">
+                                        <div key={item.name} className="flex flex-col min-w-[max-content]">
                                             <div className="flex flex-col space-y-3">
                                                 {item.submenu ? (
                                                     item.submenu.map(sub => (
                                                         <Link
                                                             key={sub.name}
                                                             href={sub.href}
-                                                            className="text-sm font-semibold text-gray-500 hover:text-blue-700 transition-colors inline-block w-fit"
+                                                            className="text-sm font-medium text-gray-500 hover:text-blue-700 hover:font-bold transition-all inline-block w-fit py-1"
                                                             onClick={() => setIsMegaMenuOpen(false)}
                                                         >
                                                             {sub.name}
@@ -179,6 +175,8 @@ export function Header() {
                                         </div>
                                     ))}
                                 </div>
+                                {/* 3. Right Spacer matched to top Toggles */}
+                                <div className="w-[120px] flex-shrink-0 hidden lg:block" />
                             </div>
                         </div>
                     </div>

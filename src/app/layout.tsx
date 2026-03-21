@@ -30,15 +30,6 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-  },
-  icons: {
-    icon: [
-      { url: '/favicon.png?v=5', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png?v=5', sizes: '180x180', type: 'image/png' },
-    ],
-    shortcut: '/favicon.png?v=5',
   }
 };
 
