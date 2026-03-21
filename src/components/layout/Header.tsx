@@ -47,9 +47,9 @@ export function Header() {
                 <div className="max-w-[85rem] mx-auto w-full px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-20 w-full">
                         {/* 1. Logo - W-[300px] aligned with banner width (Desktop only) */}
-                        <div className="w-auto lg:w-[300px] flex-shrink-0 flex items-center relative z-50 lg:pr-10">
+                        <div className="w-auto lg:w-[300px] flex-shrink flex items-center relative z-50 lg:pr-10">
                             <Link href="/" className="flex items-center">
-                                <img src="/images/logo.png" alt="A1 특수강 로고" className="h-10 w-auto object-contain" />
+                                <img src="/images/logo.png" alt="A1 특수강 로고" className="h-7 sm:h-8 md:h-10 w-auto object-contain" />
                             </Link>
                         </div>
 
@@ -58,35 +58,38 @@ export function Header() {
                             className="hidden lg:flex flex-1 h-full items-center"
                             onMouseEnter={() => setIsMegaMenuOpen(true)}
                         >
-                            <div className="w-full flex justify-between items-center h-full px-8 lg:px-[5rem]">
-                                {currentNavItems.map(item => (
-                                    <Link 
-                                        key={item.name} 
-                                        href={item.href}
-                                        className="h-full flex items-center justify-center group cursor-pointer"
-                                        onClick={() => setIsMegaMenuOpen(false)}
-                                    >
-                                        <span className="text-gray-800 font-bold text-[17px] hover:text-blue-700 transition-colors whitespace-nowrap">
-                                            {item.name}
-                                        </span>
-                                    </Link>
-                                ))}
+                            <div className="w-full h-full px-8 lg:px-[5rem]">
+                                <div className="grid grid-cols-5 w-full h-full">
+                                    {currentNavItems.map(item => (
+                                        <div key={item.name} className="flex justify-center items-center h-full">
+                                            <Link 
+                                                href={item.href}
+                                                className="group cursor-pointer"
+                                                onClick={() => setIsMegaMenuOpen(false)}
+                                            >
+                                                <span className="text-gray-800 font-bold text-[17px] hover:text-blue-700 transition-colors whitespace-nowrap">
+                                                    {item.name}
+                                                </span>
+                                            </Link>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </nav>
 
                         {/* 3. Right side: ENG/KOR toggle + Hamburger */}
-                        <div className="w-auto lg:w-[120px] flex-shrink-0 flex items-center justify-end gap-4 relative z-50">
+                        <div className="w-auto lg:w-[120px] flex-shrink-0 flex items-center justify-end gap-2 sm:gap-4 relative z-50">
                             {/* Language Toggle */}
-                            <div className="flex items-center gap-1 text-sm font-bold z-50">
+                            <div className="flex items-center gap-1 text-[11px] sm:text-sm font-bold z-50">
                                 <button
-                                    className={`px-2 py-1 rounded transition-colors ${lang === 'ENG' ? 'text-blue-700 bg-blue-50' : 'text-gray-400 hover:text-gray-700'}`}
+                                    className={`px-1.5 sm:px-2 py-1 rounded transition-colors ${lang === 'ENG' ? 'text-blue-700 bg-blue-50' : 'text-gray-400 hover:text-gray-700'}`}
                                     onClick={() => setLang('ENG')}
                                 >
                                     ENG
                                 </button>
                                 <span className="text-gray-200">|</span>
                                 <button
-                                    className={`px-2 py-1 rounded transition-colors ${lang === 'KOR' ? 'text-blue-700 bg-blue-50' : 'text-gray-400 hover:text-gray-700'}`}
+                                    className={`px-1.5 sm:px-2 py-1 rounded transition-colors ${lang === 'KOR' ? 'text-blue-700 bg-blue-50' : 'text-gray-400 hover:text-gray-700'}`}
                                     onClick={() => setLang('KOR')}
                                 >
                                     KOR
@@ -96,12 +99,12 @@ export function Header() {
                             {/* Hamburger */}
                             <button
                                 type="button"
-                                className="lg:hidden p-2 rounded-md text-gray-900 hover:text-blue-700 hover:bg-gray-100 focus:outline-none transition-colors z-50"
+                                className="lg:hidden p-1 sm:p-2 rounded-md text-gray-900 hover:text-blue-700 hover:bg-gray-100 focus:outline-none transition-colors z-50 -mr-2 sm:mr-0"
                                 onClick={() => setIsMenuOpen(true)}
                                 aria-expanded={isMenuOpen}
                             >
                                 <span className="sr-only">Open main menu</span>
-                                <Menu className="h-8 w-8" aria-hidden="true" />
+                                <Menu className="h-7 w-7 sm:h-8 sm:w-8" aria-hidden="true" />
                             </button>
                         </div>
                     </div>
@@ -146,34 +149,36 @@ export function Header() {
                                     </div>
                                 </div>
 
-                                {/* 2. Menu Columns - Flex distributed corresponding to Top Nav */}
-                                <div className="flex-1 px-8 lg:px-[5rem] flex justify-between">
-                                    {currentNavItems.map(item => (
-                                        <div key={item.name} className="flex flex-col min-w-[max-content]">
-                                            <div className="flex flex-col space-y-3">
-                                                {item.submenu ? (
-                                                    item.submenu.map(sub => (
+                                {/* 2. Menu Columns - Grid distributed perfectly matching Top Nav */}
+                                <div className="flex-1 px-8 lg:px-[5rem]">
+                                    <div className="grid grid-cols-5 w-full h-full">
+                                        {currentNavItems.map(item => (
+                                            <div key={item.name} className="flex justify-center">
+                                                <div className="flex flex-col space-y-4 w-fit">
+                                                    {item.submenu ? (
+                                                        item.submenu.map(sub => (
+                                                            <Link
+                                                                key={sub.name}
+                                                                href={sub.href}
+                                                                className="text-[15px] font-medium text-gray-500 hover:text-blue-700 hover:font-bold transition-all inline-block py-1 text-left"
+                                                                onClick={() => setIsMegaMenuOpen(false)}
+                                                            >
+                                                                {sub.name}
+                                                            </Link>
+                                                        ))
+                                                    ) : (
                                                         <Link
-                                                            key={sub.name}
-                                                            href={sub.href}
-                                                            className="text-sm font-medium text-gray-500 hover:text-blue-700 hover:font-bold transition-all inline-block w-fit py-1"
+                                                            href={item.href}
+                                                            className="text-[15px] font-semibold text-gray-500 hover:text-blue-700 transition-colors inline-block py-1 text-left"
                                                             onClick={() => setIsMegaMenuOpen(false)}
                                                         >
-                                                            {sub.name}
+                                                            {lang === 'ENG' ? 'Go to ' : ''}{item.name}{lang === 'ENG' ? '' : ' 바로가기'}
                                                         </Link>
-                                                    ))
-                                                ) : (
-                                                    <Link
-                                                        href={item.href}
-                                                        className="text-sm font-semibold text-gray-500 hover:text-blue-700 transition-colors inline-block w-fit"
-                                                        onClick={() => setIsMegaMenuOpen(false)}
-                                                    >
-                                                        {lang === 'ENG' ? 'Go to ' : ''}{item.name}{lang === 'ENG' ? '' : ' 바로가기'}
-                                                    </Link>
-                                                )}
+                                                    )}
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        ))}
+                                    </div>
                                 </div>
                                 {/* 3. Right Spacer matched to top Toggles */}
                                 <div className="w-[120px] flex-shrink-0 hidden lg:block" />

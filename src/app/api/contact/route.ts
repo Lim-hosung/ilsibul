@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
 
     const mailOptions = {
         from: process.env.SMTP_USER,
-        to: 'icecuve84@naver.com',
+        to: 'a1specialsteel@daum.net',
         subject: `[에이원특수강] 문의 접수 - ${name}`,
         html: `
             <div style="font-family: 'Malgun Gothic', sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e5e7eb; border-radius: 8px;">

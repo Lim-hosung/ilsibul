@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useLang } from '@/lib/LanguageContext';
 
@@ -61,13 +62,17 @@ export default function CommonTabbedLayout({
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col pt-0">
             {/* 1. Hero Banner Area */}
-            <div className="relative w-full h-[280px] md:h-[350px] flex items-center justify-center overflow-hidden">
+            <div className="relative w-full h-[280px] md:h-[350px] flex items-center justify-center overflow-hidden bg-slate-900">
                 {/* Background Image / Overlay */}
                 <div className="absolute inset-0 z-0">
-                    <img
+                    <Image
                         src={activeBanner}
                         alt={`${title} banner`}
-                        className={`w-full h-full object-cover transition-all duration-700 ${currentFilter}`}
+                        fill
+                        priority
+                        sizes="100vw"
+                        quality={90}
+                        className={`object-cover transition-all duration-700 ${currentFilter}`}
                     />
                 </div>
 

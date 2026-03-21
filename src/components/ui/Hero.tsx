@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import Image from 'next/image';
 
 interface HeroProps {
     title: string;
@@ -33,12 +34,14 @@ export function Hero({
         <div className={`relative flex w-full ${heightClasses[size]} overflow-hidden bg-gray-900`}>
             {/* Background Image */}
             {imageSrc && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
+                <Image
                     src={imageSrc}
-                    alt=""
-                    className="absolute inset-0 w-full h-full object-cover"
-                    loading="eager"
+                    alt="Hero Background"
+                    fill
+                    priority
+                    sizes="100vw"
+                    quality={90}
+                    className="object-cover"
                 />
             )}
             {/* Overlay */}

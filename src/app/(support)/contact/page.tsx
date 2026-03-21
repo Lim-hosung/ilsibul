@@ -29,22 +29,39 @@ export default function ContactPage() {
         e.preventDefault();
         setStatus('loading');
 
-        const subject = encodeURIComponent(`[에이원특수강] 문의 접수 - ${form.name}`);
-        const body = encodeURIComponent(
-            `이름 / 회사명: ${form.name}\n` +
-            `이메일: ${form.email}\n` +
-            `연락처: ${form.phone}\n` +
-            `관심 제품 / 강종: ${form.product}\n\n` +
-            `문의 내용:\n${form.message}`
-        );
-        const mailtoUrl = `mailto:icecuve84@naver.com?subject=${subject}&body=${body}`;
-
         try {
-            window.location.href = mailtoUrl;
-            setTimeout(() => {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(form)
+            });
+
+            if (res.ok) {
                 setStatus('success');
                 setForm({ name: '', email: '', phone: '', product: '', message: '' });
-            }, 1000);
+            } else {
+                // If API fails (e.g., SMTP not configured), fallback to formsubmit.co
+                const fallbackRes = await fetch('https://formsubmit.co/ajax/a1specialsteel@daum.net', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Accept: 'application/json'
+                    },
+                    body: JSON.stringify({
+                        이름: form.name,
+                        이메일: form.email,
+                        연락처: form.phone,
+                        관심제품: form.product,
+                        문의내용: form.message,
+                    }),
+                });
+                if (fallbackRes.ok) {
+                    setStatus('success');
+                    setForm({ name: '', email: '', phone: '', product: '', message: '' });
+                } else {
+                    setStatus('error');
+                }
+            }
         } catch {
             setStatus('error');
         }

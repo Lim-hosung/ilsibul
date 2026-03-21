@@ -9,7 +9,7 @@ export default function CatalogPage() {
     const handleRequest = () => {
         const subject = encodeURIComponent('[에이원특수강] 카탈로그 요청');
         const body = encodeURIComponent('안녕하세요,\n\n에이원특수강 제품 카탈로그를 요청드립니다.\n\n이름/회사:\n연락처:\n이메일:');
-        window.location.href = `mailto:icecuve84@naver.com?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:a1specialsteel@daum.net?subject=${subject}&body=${body}`;
     };
 
     return (
@@ -68,7 +68,7 @@ export default function CatalogPage() {
                         </div>
                         <div>
                             <p className="text-xs font-bold text-gray-500 mb-1">{lang === 'ENG' ? 'Email' : '이메일 문의'}</p>
-                            <p className="font-bold text-gray-900">icecuve84@naver.com</p>
+                            <p className="font-bold text-gray-900">a1specialsteel@daum.net</p>
                         </div>
                     </div>
                 </div>
