@@ -57,7 +57,7 @@ export default function IntroPage() {
                     { icon: <Building2 className="w-6 h-6 text-blue-600" />, label: isEng ? 'Company Name' : '회사명', value: isEng ? 'A1 Special Steel Co., Ltd.' : '㈜에이원특수강' },
                     { icon: <User className="w-6 h-6 text-blue-600" />, label: isEng ? 'Representative' : '대표', value: isEng ? 'Han-su Na' : '나한수' },
                     { icon: <Calendar className="w-6 h-6 text-blue-600" />, label: isEng ? 'Established' : '설립', value: isEng ? '2008' : '2008년' },
-                    { icon: <MapPin className="w-6 h-6 text-blue-600" />, label: isEng ? 'Location' : '소재지', value: isEng ? '145 Mayu-ro, Siheung-si, Gyeonggi-do' : '경기 시흥시 마유로 145' },
+                    { icon: <MapPin className="w-6 h-6 text-blue-600" />, label: isEng ? 'Location' : '소재지', value: isEng ? '146 Mayu-ro, Siheung-si, Gyeonggi-do' : '경기 시흥시 마유로 146' },
                 ].map((item, i) => (
                     <div key={i} className="flex items-center gap-6 p-8 bg-gray-50 rounded-2xl border border-gray-100 shadow-sm">
                         <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center shrink-0">

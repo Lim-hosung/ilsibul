@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { useLang } from '@/lib/LanguageContext';
 
 export function Footer() {
@@ -11,7 +11,7 @@ export function Footer() {
         desc: lang === 'ENG'
             ? 'Official SeAH Besteel dealer specializing in special steel bar distribution, cutting processing, and total solutions for Korean industry.'
             : '세아베스틸 공식 대리점.\n특수강 봉강 유통·절단 가공·토털 솔루션 전문기업.',
-        address: lang === 'ENG' ? '145 Mayu-ro, Siheung-si, Gyeonggi-do' : '경기도 시흥시 마유로 145',
+        address: lang === 'ENG' ? '146 Mayu-ro, Siheung-si, Gyeonggi-do' : '경기도 시흥시 마유로 146',
         copy: lang === 'ENG'
             ? `© ${new Date().getFullYear()} A1 Special Steel Co., Ltd. All rights reserved.`
             : `© ${new Date().getFullYear()} ㈜에이원특수강. All rights reserved.`,
@@ -21,9 +21,6 @@ export function Footer() {
         colProducts: lang === 'ENG' ? 'Products' : '제품',
         colCompany: lang === 'ENG' ? 'Company' : '회사',
         colResources: lang === 'ENG' ? 'Resources' : '자료',
-        prodItems: lang === 'ENG'
-            ? ['합금강 / 탄소강 봉강', '고합금강 봉강', '절단 가공 서비스', '열처리 협력망']
-            : ['합금강 / 탄소강 봉강', '고합금강 봉강', '절단 가공 서비스', '열처리 협력망'],
         compItems: lang === 'ENG'
             ? ['About Us', 'News & Media', 'History', 'Contact']
             : ['회사 소개', '뉴스', '회사 연혁', '문의하기'],
@@ -36,12 +33,12 @@ export function Footer() {
 
     const prodHrefs = [
         '/products/special-steel',
-        '/products/special-steel',
-        '/contact',
-        '/contact',
+        '/products/secondary',
+        '/products/large-forging',
+        '/products/die-forging',
     ];
-    const prodItemsKOR = ['합금강 / 탄소강 봉강', '고합금강 봉강', '절단 가공 서비스', '열처리 협력망'];
-    const prodItemsENG = ['Alloy / Carbon Steel Bar', 'High-Alloy Steel Bar', 'Cutting & Processing', 'Heat Treatment Network'];
+    const prodItemsKOR = ['특수강', '이차가공재', '대형단조', '형단조'];
+    const prodItemsENG = ['Special Steel', 'Secondary Steel', 'Large Forging', 'Die Forging'];
     const prodItems = lang === 'ENG' ? prodItemsENG : prodItemsKOR;
 
     return (
@@ -107,16 +104,6 @@ export function Footer() {
                                 </li>
                             ))}
                         </ul>
-                        <div className="mt-8 flex space-x-4">
-                            <a href="#" className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors text-white">
-                                <Linkedin className="w-4 h-4" />
-                                <span className="sr-only">LinkedIn</span>
-                            </a>
-                            <a href="#" className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors text-white">
-                                <Twitter className="w-4 h-4" />
-                                <span className="sr-only">Twitter</span>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -78,7 +78,7 @@ export default function ContactPage() {
                             <div>
                                 <p className="text-sm font-bold text-gray-500 mb-1">{lang === 'ENG' ? 'Address' : '주소'}</p>
                                 <p className="font-medium text-gray-900">
-                                    {lang === 'ENG' ? '145 Mayu-ro, Siheung-si, Gyeonggi-do' : '경기도 시흥시 마유로 145'}
+                                    {lang === 'ENG' ? '146 Mayu-ro, Siheung-si, Gyeonggi-do' : '경기도 시흥시 마유로 146'}
                                 </p>
                             </div>
                         </div>

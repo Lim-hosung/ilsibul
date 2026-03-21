@@ -62,11 +62,16 @@ export function Header() {
                                 <div className="col-span-1 pr-10 border-r border-transparent" /> {/* Spacer to align with Mega Menu banner */}
                                 <div className="col-span-3 grid grid-cols-5 gap-8 h-full">
                                     {currentNavItems.map(item => (
-                                        <div key={item.name} className="h-full flex items-center justify-start group cursor-pointer">
+                                        <Link 
+                                            key={item.name} 
+                                            href={item.href}
+                                            className="h-full flex items-center justify-start group cursor-pointer"
+                                            onClick={() => setIsMegaMenuOpen(false)}
+                                        >
                                             <span className="text-gray-800 font-bold text-lg hover:text-blue-700 transition-colors">
                                                 {item.name}
                                             </span>
-                                        </div>
+                                        </Link>
                                     ))}
                                 </div>
                                 </div>
